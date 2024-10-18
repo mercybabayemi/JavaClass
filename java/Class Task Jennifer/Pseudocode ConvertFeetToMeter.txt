@@ -1,0 +1,12 @@
+Pseudocode ConvertFeetToMeter
+Stage 1
+- Prompt user to enter number in foot
+- Convert foot number to meter with 0.305
+- Display result
+
+Stage 2
+- Prompt user to enter number in foot
+- Collect and store as 'footNumber'
+- Multiply with : footNumber * 0.305
+- Collect result and store as 'meter number'
+- Display meter number
