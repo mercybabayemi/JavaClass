@@ -1,0 +1,8 @@
+PSEUDOCODE OF NATURAL NUMBERS
+- - Initialise sum to zero
+- Initialise numbercounter to one
+- While number counter is less than or equal to 10
+- Print integer , counter
+- Initialise sum to sum + counter
+- Increment or add one to control variable
+- Display the sum of first 10 numbers
