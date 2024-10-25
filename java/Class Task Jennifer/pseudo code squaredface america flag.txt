@@ -1,0 +1,7 @@
+pseudo code squaredface
+- Arrange symbols in patterns
+-Display patterns
+
+pseudo code Amercicanflag
+- Arrange symbols in patterns
+-Display patterns
