@@ -1,25 +1,20 @@
-/**Prompt user to enter weight in pounds and height in inches, calculate users body mass index, display bmi categories and their values*/
 
-import java.util.Scanner; //import declaration helps the compiler locate the class Scanner in java predefined packages
+import java.util.Scanner; 
+public class BmiCalculator{ 
 
-public class BmiCalculator{ //class declaration
-
- 	public static void main(String[]args){ //Main method declaration
+ 	public static void main(String[]args){ 
 
 	
-	Scanner input = new Scanner(System.in); //creates a new instance of the Scanner class that reads input from the standard input stream 
+	Scanner input = new Scanner(System.in); 
+	System.out.print("Enter your weight in pounds:"); 
 
-	System.out.print("Enter your weight in pounds:"); //Prompt user on console to input
-
-	double weightInPounds = input.nextDouble(); //We use nextDouble() to capture inputs.
+	double weightInPounds = input.nextDouble(); 
 
 	System.out.print("Enter your height in inches:");
 	double heightInInches = input.nextDouble();
 
-	double calculation = (weightInPounds * 703) / (heightInInches * heightInInches); //calculate body mass index
-
- 	System.out.printf("The calculated BMI value is %.1f%n", calculation); //display result
-
+	double calculation = (weightInPounds * 703) / (heightInInches * heightInInches); 
+ 	System.out.printf("The calculated BMI value is %.1f%n", calculation); 
 	if (calculation < 18.5){
 		System.out.println("The BMI category is underweight");
 	}
@@ -34,7 +29,7 @@ public class BmiCalculator{ //class declaration
 	}
 	else {
 		System.out.println("The BMI category is morbidly obese"); 
-	} /*multiple selection statements to select condition and determine and displaying bmi values and categories*/
+	} 
 
 }
 }

@@ -1,6 +1,6 @@
 import java.util.Scanner;
-public class Numbers {
-	public static void main(String[]args){
+public class LargestAndSmallestNumber{
+public static void main(String[]args){
  
 	Scanner input = new Scanner(System.in);
 	
@@ -9,12 +9,12 @@ public class Numbers {
 	
 
 	while(true){
-		System.out.print("Enter number: ");
+		System.out.println("Enter number: ");
 		int userInput = input.nextInt();
 
 		if (userInput > largestNumber){
 			largestNumber = userInput;
-			System.out.print(largestNumber);
+			System.out.println(largestNumber);
 		}
 		if(userInput < smallestNumber){
 			smallestNumber = userInput;

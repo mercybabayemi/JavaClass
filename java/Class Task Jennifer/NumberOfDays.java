@@ -10,9 +10,6 @@ public class NumberOfDays{
 	System.out.print("Enter a year: ");
 	int year = input.nextInt();
  
-if(year % 4 == 0){
- int leapYearChecker = 29;
-}
 
 if(month == 1){
  System.out.printf("January %d has 31 days",year);

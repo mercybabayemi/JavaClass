@@ -1,20 +1,18 @@
-/**Prompt user to enter number in foot, Convert foot number to meter with 0.305, Display result*/
 
-import java.util.Scanner; //import declaration helps the compiler locate the class Scanner in java predefined packages
 
-public class ConvertFeetToMeter{ //class declaration
-	public static void main(String[]args){ //Main method declaration
-	
-	Scanner input = new Scanner(System.in); //creates a new instance of the Scanner class that reads input from the standard input stream object
+import java.util.Scanner; 
+public class ConvertFeetToMeter{ 
+	public static void main(String[]args){ 	
+	Scanner input = new Scanner(System.in); 
 
-	System.out.print("Enter foot number:"); //Prompt user on console to input
-	double footNumber = input.nextDouble(); //We use nextDouble() to capture inputs.
+	System.out.print("Enter foot number:"); 
+	double footNumber = input.nextDouble(); 
 	
 
-	double meterConverter = 0.305;  //declares a double variable and initializes it with a value 
+	double meterConverter = 0.305;
 
-	double meterNumber = footNumber * meterConverter; //multiplication of variables
+	double meterNumber = footNumber * meterConverter; 
 	
-	System.out.printf("Meternumber is %f%n", meterNumber); /*Display result*/
+	System.out.printf("Meternumber is %f%n", meterNumber); 
 }
 } 

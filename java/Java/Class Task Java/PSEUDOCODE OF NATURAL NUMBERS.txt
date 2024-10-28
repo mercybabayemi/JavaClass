@@ -1,8 +1,18 @@
 PSEUDOCODE OF NATURAL NUMBERS
-- - Initialise sum to zero
-- Initialise numbercounter to one
-- While number counter is less than or equal to 10
-- Print integer , counter
-- Initialise sum to sum + counter
+Stage 1
+- Declare public class
+- Declare main method
+- Initialise numbers
+- print number
+- print sum
+
+Stage 2
+- Declare public class
+- Declare main method
+- Initialise sum to zero
+- Initialise "numberCounter" to one
+- Declare while "numberCounter" is less than or equal to 10
+- Print "integer , counter"
+- Initialise sum to "sum + numberCounter"
 - Increment or add one to control variable
-- Display the sum of first 10 numbers
+- Display the "sum" of first 10 numbers"

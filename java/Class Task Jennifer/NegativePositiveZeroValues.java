@@ -26,7 +26,7 @@ public class NegativePositiveZeroValues{ //class declaration
 	}
 	else {
 	zeroNum += 1;
-	} //multiple selection statements
+	} //multiple selection statements to select condition and count to the declared double variables
 	count++;
 	}
 	

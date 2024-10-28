@@ -12,7 +12,8 @@ public class ThreeIntegersInput{
 
 	System.out.print("Enter third amount: ");
 	int thirdNumber = input.nextInt();
-		int firstExtractedNumber = firstNumber % 10;
+	
+	int firstExtractedNumber = firstNumber % 10;
 	int secondExtractedNumber = secondNumber % 10;
 	int thirdExtractedNumber = thirdNumber % 10;
 
