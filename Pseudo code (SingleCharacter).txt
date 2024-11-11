@@ -1,0 +1,5 @@
+Pseudo code (SingleCharacter)
+- Prompt user to enter a single alphabet
+- Collect and store as letter
+- Determine whether the input is a single input or error message
+- Print and display result

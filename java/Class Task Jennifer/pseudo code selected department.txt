@@ -1,0 +1,12 @@
+pseudo code selected department
+prompt user to enter department
+case 1 it 
+case 2 hr 
+case 3 finance 
+
+prompt user to enter role within each department
+case 1 manager 
+case 2 analyst
+case 3 intern
+
+display result
