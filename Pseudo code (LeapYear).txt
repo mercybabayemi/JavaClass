@@ -1,0 +1,5 @@
+Pseudo code (LeapYear)
+- Prompt user to enter a number
+-  Collect and store it as year
+- Determine whether year is a leap year if when divisible by 4 remains 0 or whether it is not a leap year
+-Print and display result

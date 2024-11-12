@@ -1,0 +1,6 @@
+pseudocode age eligibity
+prompt user to enter age 
+determine if they are eligible to vote and drink
+vote : 18 and above 
+drive 16 and above
+drink 21 and above 
