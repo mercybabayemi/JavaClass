@@ -1,0 +1,4 @@
+Pseudo code
+-Assign the value of calculation of the sum to 'sum'
+-Collect and store result
+-Display result using all three print method

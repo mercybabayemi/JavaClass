@@ -1,0 +1,25 @@
+2 integers
+STAGE 1
+1. Prompt user to enter two integers.
+2. Multiply first  number by 3.
+3. Multiply second number by 2.
+4. initialize zero = 0.
+4. If result of multiple of first number % result of multiple of second number == 0, print result 1 is a multiple of result 2, else print result 1 is not a multiple of result 2.
+
+STAGE 2
+1. Prompt user to enter the first number.
+2. Collect first number .
+3. Store first number as 'num1'.
+4. Prompt user to enter the second number.
+5. Collect second number .
+6. Store second number as 'num2'.
+7. Multiply 'num1' by 3.
+5. Collect result .
+6. Store result as 'multiple1'.
+7. Multiply 'num2' by 2.
+5. Collect result .
+6. Store result as 'multiple2'.
+7. Instantiate result to multiple1 % multiple 2 
+8. If result == 0, print 'num1' is a multiple of 'num2'.
+9. Else print num1 is not a multiple of num2.
+
