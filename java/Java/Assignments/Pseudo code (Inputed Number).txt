@@ -1,0 +1,7 @@
+Pseudo code (Inputed Number)
+- Declare and initialize index
+- Declare range 
+- increment index
+- multiply index by 5
+- Collect and store as product
+- Print and display result

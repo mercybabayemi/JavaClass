@@ -1,0 +1,12 @@
+Pseudocode average value
+declare array variable and assign values to the array variable
+collect and store as numbers
+declare sum variable
+declare average variable
+collect and store as sum
+loop through numbers 
+add all numbers
+divide sum by array length
+collect and store as average 
+display result
+

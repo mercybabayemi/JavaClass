@@ -1,0 +1,23 @@
+Pseudo code NegativePositiveZeroValues
+
+Stage 1
+- Prompt user to enter five numbers
+- Count the numbers of positive numbers input
+- Count the numbers of negative numbers input
+- Count the numbers of zero numbers input
+
+Stage 2
+- Prompt the user to enter number first time
+- Collect and store numbers
+- Save as numbers
+- Repeat number count 5 times
+- Initialise and assign 0 to positive number
+- Store as 'positivenum'
+- Initialise and assign 0 to zero number90
+- Store as 'zeronum'
+- Initialise and assign 0 to negative number
+- Store as 'negativenum'
+- Print 'positivenum'
+- Print 'zeronum'
+- Print 'negativenum'
+- Display result
