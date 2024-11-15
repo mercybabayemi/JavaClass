@@ -1,4 +1,4 @@
-public class FactorialConstant{
+public class FactorialRaised{
 
 	public static void main(String[] args){
 	
@@ -6,9 +6,11 @@ public class FactorialConstant{
 
 		int sum = 1; 
 		
+		char numerator = 'x';
+		
 		for(int i = 1; i <= 7; i++){
 
-			sum += (1/(product *= i));
+			sum += (( numerator *= 2)/(product *= i));
 
 		}
 
@@ -16,3 +18,4 @@ public class FactorialConstant{
 		
 	}
 }
+
