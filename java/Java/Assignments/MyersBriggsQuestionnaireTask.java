@@ -20,141 +20,147 @@ public class MyersBriggsQuestionnaireTask{
         String answerJudgementPerceptionA = "";
         String answerJudgementPerceptionB = "";
 
-        String[][] questions = {
-            {"A. Expend energy, enjoy groups", "B. Conserve energy, enjoy one-on-one"},
-            {"A. Interpret literally", "B. Look for meaning and possibilities"},
-            {"A. Logical, thinking, questioning", "B. Empathetic, feeling, accommodating"},
-            {"A. Organized orderly", "B. Flexible, adaptable"},
-            {"A. More outgoing, think out loud", "B. More reserved, think to yourself"},
-            {"A. Practical, realistic, experiential", "B. Imaginative, innovative, theoretical"},
-            {"A. Candid, straightforward, frank", "B. Tactful, kind, encouraging"},
-            {"A. Plan, schedule", "B. Unplanned, spontaneous"},
-            {"A. Seek many tasks, public activities, interaction with others", "B. Seek private solitary activities with quiet to concentrate"},
-            {"A. Standard, usual, conventional", "B. Different, novel, unique"},
-            {"A. Firm, tend to criticize, hold the line", "B. Gentle, tend to appreciate, conciliate"},
-            {"A. Regulated, structured", "B. Easygoing, \"live and let live\""},
-            {"A. External, communicative, express yourself", "B. Internal, reticent, keep to yourself"},
-            {"A. Focus on here-and-now", "B. Look to the future, global perspective, \"big picture\""},
-            {"A. Tough-minded, just", "B. Tender-hearted, merciful"},
-            {"A. Preparation, plan ahead", "B. Go with the flow, adapt as you go"},
-            {"A. Active, initiate", "B. Reflective, deliberate"},
-            {"A. Facts, things, \"what is\"", "B. Ideas, dreams, \"what could be\", philosophical"},
-            {"A. Matter of fact, issue-oriented", "B. Sensitive, people-oriented, compassionate"},
-            {"A. Control, govern", "B. Latitude, freedom"}
-        };
+	String personality = "";
 
-        for (int i = 0; i < questions.length; i += 4) {
-            System.out.println(questions[i][0]);
-            System.out.println(questions[i][1]);
-            System.out.print("Enter a response: ");
-            String response = input.nextLine();
+        String[][] firstSection = {
+	{"A. Expend energy, enjoy groups", "B. Conserve energy, enjoy one-on-one"},
+	{"A.Interpret literally", "B. Look for meaning and possibilities"}, 
+	{"A. More outgoing, think out loud", "B. More reserved, think to yourself"}, 
+	{"A. Seek many tasks, public activities, interaction with others", "B. Seek private solitary activities with quiet to concentrate"}, 
+	{"A. External, communicative, express yourself", "B. Internal, reticent, keep to yourself"} };
 
-            while (!response.equalsIgnoreCase("A") && !response.equalsIgnoreCase("B")) {
-                System.out.println("Response is not A or B. Please try again.");
-                System.out.print("Enter a response: ");
-                response = input.nextLine();
-            }
+	String[][] secondSection = {
+	{"A. Active, initiate", "B. Reflective, deliberate"},
+	{"A. Practical, realistic, experiential", "B. Imaginative, innovative, theoretical"},
+	{"A. Standard, usual, conventional", "B. Different, novel, unique"},
+	{"A. Focus on here-and-now", "B. Look to the future, global perspective, \"big picture\""},
+	{"A. Facts, things, \"what is\" ", "B. Ideas, dreams, \"what could be\", philosophical"} };
 
-            if (response.equalsIgnoreCase("A")) {
-                answerExtrovertIntrovertA += response;
-            } else {
-                answerExtrovertIntrovertB += response;
-            }
-        }
+        String[][] thirdSection = {
+	{"A. Logical, thinking, questioning", "B. Empathetic, feeling, accommodating"},
+	{"A. Candid, straightforward, frank", "B. Tactful, kind, encouraging"},
+	{"A. Firm, tend to criticize, hold the line", "B. Gentle, tend to appreciate, conciliate"},
+	{"A. Tough-minded, just", "B. Tender-hearted, merciful"},
+	{"A. Matter of fact, issue-oriented", "B. Sensitive, people-oriented, compassionate"} };
 
-        for (int i = 1; i < questions.length; i += 4) {
-            System.out.println(questions[i][0]);
-            System.out.println(questions[i][1]);
-            System.out.print("Enter a response: ");
-            String response = input.nextLine();
+        String[][] fourthSection = {
+	{"A. Organized orderly", "B. Flexible, adaptable"},
+        {"A. Plan, schedule", "B. Unplanned, spontaneous"},
+      	{"A. Regulated, structured", "B. Easygoing, \"live and let live\""},
+        {"A. Preparation, plan ahead", "B. Go with the flow, adapt as you go"},
+        {"A. Control, govern", "B. Latitude, freedom"} };
 
-            while (!response.equalsIgnoreCase("A") && !response.equalsIgnoreCase("B")) {
-                System.out.println("Response is not A or B. Please try again.");
-                System.out.print("Enter a response: ");
-                response = input.nextLine();
-            }
+        for (int i = 0; i < 5; i++){
+		System.out.println(firstSection[i][0] + firstSection[i][1]);
+        	System.out.println("Enter a response: ");
+        	String response = input.nextLine();
 
-            if (response.equalsIgnoreCase("A")) {
-                answerSensingIntuitionA += response;
-            } else {
-                answerSensingIntuitionB += response;
-            }
-        }
+        	while (!response.equalsIgnoreCase("A") && !response.equalsIgnoreCase("B")) {
+             		System.out.println("Response is not A or B. Please try again.");
+               		System.out.print("Enter a response: ");
+               		response = input.nextLine();
+       		}
 
-        for (int i = 2; i < questions.length; i += 4) {
-            System.out.println(questions[i][0]);
-            System.out.println(questions[i][1]);
-            System.out.print("Enter a response: ");
-            String response = input.nextLine();
 
-            while (!response.equalsIgnoreCase("A") && !response.equalsIgnoreCase("B")) {
-                System.out.println("Response is not A or B. Please try again.");
-                System.out.print("Enter a response: ");
-                response = input.nextLine();
-            }
+		if (response.equalsIgnoreCase("A")) {
+                	answerExtrovertIntrovertA += response;
+        	} else {
+               		answerExtrovertIntrovertB += response;
+        	}
+	}
 
-            if (response.equalsIgnoreCase("A")) {
-                answerThinkingFeelingA += response;
-            } else {
-                answerThinkingFeelingB += response;
-            }
-        }
+	if(answerExtrovertIntrovertA.length() > answerExtrovertIntrovertB.length()) {
+			System.out.println("You are extroverted");
+           		personality += "E";
+	} else {
+			System.out.println("You are introverted");
+         	 	 personality += "I";
+       	}
 
-        for (int i = 3; i < questions.length; i += 4) {
-            System.out.println(questions[i][0]);
-            System.out.println(questions[i][1]);
-            System.out.print("Enter a response: ");
-            String response = input.nextLine();
+	 
+        for (int i = 0; i < 5; i++) {
+		System.out.println(secondSection[i][0] + secondSection[i][1]);
+        	System.out.println("Enter a response: ");
+        	String response = input.nextLine();
 
-            while (!response.equalsIgnoreCase("A") && !response.equalsIgnoreCase("B")) {
-                System.out.println("Response is not A or B. Please try again.");
-                System.out.print("Enter a response: ");
-                response = input.nextLine();
-            }
+            	while (!response.equalsIgnoreCase("A") && !response.equalsIgnoreCase("B")) {
+              		System.out.println("Response is not A or B. Please try again.");
+                	System.out.print("Enter a response: ");
+                	response = input.nextLine();
+            	}
 
-            if (response.equalsIgnoreCase("A")) {
-                answerJudgementPerceptionA += response;
-            } else {
-                answerJudgementPerceptionB += response;
-            }
-        }
+		if (response.equalsIgnoreCase("A")) {
+                	answerSensingIntuitionA += response;
+           	} else {
+                	answerSensingIntuitionB += response;
+            	}
 
-        System.out.println("All A(s) for Extrovert/Introvert: " + answerExtrovertIntrovertA);
-        System.out.println("All B(s) for Extrovert/Introvert: " + answerExtrovertIntrovertB);
-        System.out.println("All A(s) for Sensing/Intuition: " + answerSensingIntuitionA);
-        System.out.println("All B(s) for Sensing/Intuition: " + answerSensingIntuitionB);
-        System.out.println("All A(s) for Thinking/Feeling: " + answerThinkingFeelingA);
-        System.out.println("All B(s) for Thinking/Feeling: " + answerThinkingFeelingB);
-        System.out.println("All A(s) for Judging/Perceiving: " + answerJudgementPerceptionA);
-        System.out.println("All B(s) for Judging/Perceiving: " + answerJudgementPerceptionB);
+	}
+	
+	if (answerSensingIntuitionA.length() > answerSensingIntuitionB.length()) {
+			System.out.println("You are sensitive");
+           		personality += "S";
+       	} else {
+			System.out.println("You are intuitive");
+          		personality += "N";
+      	}
 
-        String personality = "";
+        for (int i = 0; i < 5; i++) {
+		System.out.println(thirdSection[i][0] + thirdSection[i][1]);
+        	System.out.println("Enter a response: ");
+        	String response = input.nextLine();
 
-        if (answerExtrovertIntrovertA.length() > answerExtrovertIntrovertB.length()) {
-            personality += "E";
+            	while (!response.equalsIgnoreCase("A") && !response.equalsIgnoreCase("B")) {
+               		System.out.println("Response is not A or B. Please try again.");
+                	System.out.print("Enter a response: ");
+                	response = input.nextLine();
+           	}
+
+           	if (response.equalsIgnoreCase("A")) {
+               		answerThinkingFeelingA += response;
+            	} else {
+                	answerThinkingFeelingB += response;
+           	}
+
+	}
+
+	if (answerThinkingFeelingA.length() > answerThinkingFeelingB.length()) {
+		System.out.println("You are thoughtful");
+            		personality += "T";
         } else {
-            personality += "I";
+		System.out.println("You are emotional");
+            		personality += "F";
         }
 
-        if (answerSensingIntuitionA.length() > answerSensingIntuitionB.length()) {
-            personality += "S";
-        } else {
-            personality += "N";
-        }
+        for (int i = 0; i < 5; i++) {
+		System.out.println(fourthSection[i][0] + fourthSection[i][1]);
+        	System.out.println("Enter a response: ");
+        	String response = input.nextLine();
 
-        if (answerThinkingFeelingA.length() > answerThinkingFeelingB.length()) {
-            personality += "T";
-        } else {
-            personality += "F";
-        }
+            	while (!response.equalsIgnoreCase("A") && !response.equalsIgnoreCase("B")) {
+                	System.out.println("Response is not A or B. Please try again.");
+                	System.out.print("Enter a response: ");
+                	response = input.nextLine();
+            	}
 
-        if (answerJudgementPerceptionA.length() > answerJudgementPerceptionB.length()) {
-            personality += "J";
-        } else {
-            personality += "P";
-        }
+           	if (response.equalsIgnoreCase("A")) {
+               		answerJudgementPerceptionA += response;
+            	} else {
+                	answerJudgementPerceptionB += response;
+		}
+	}
 
-        System.out.println("Your personality type is: " + personality);
+      	if (answerJudgementPerceptionA.length() > answerJudgementPerceptionB.length()) {
+			System.out.println("You are judgemental");
+          		personality += "J";
+       	} else {
+			System.out.println("You are perceptive");
+            		personality += "P";
+       	}
+
+
+
+     	System.out.println("Your personality type is: " + personality);
 
         switch (personality) {
             case "ENFJ":
