@@ -73,8 +73,8 @@ public class ArrayFunctionAssignment{
 		}
 		return true;
 	}
-
-	public static int firstTotalSumComputed(int[] numbers){
+ 
+    	public static int firstTotalSumComputed(int[] numbers){
 		int total = 0;
 		for(int item = 0; item < numbers.length; item++){
 			total += numbers[item];
@@ -102,4 +102,5 @@ public class ArrayFunctionAssignment{
 		return total;
 	}
 
+	
 }

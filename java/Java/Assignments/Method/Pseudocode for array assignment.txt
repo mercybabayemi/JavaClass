@@ -1,0 +1,63 @@
+Pseudocode for array assignment
+
+- declare class array and main method testing to test functions
+
+pseudocode for function of largest element
+- declare a value returning method expecting an int array numbers
+- name method largestElement
+- assign number to index zero
+- collect and store as int largest number
+- iterate through each item in the array 
+- compare each item to largest 
+- if greater than largest number, collect and save as largest
+- return largest number
+
+pseudocode for function reversing the list
+- Declare a void method expecting an int array numbers
+- Name method reversedList
+- Iterate through length of number -1 greater than 0
+- Print each index of number
+
+pseudocode to check whether element occurs in a list
+- Declare a void method expecting an int array and int element
+- Name method elementOccurance
+- Iterate through numbers length 
+- If numbers at index is equal element value, print element at index (number) exist in list 
+- If numbers at index is not equal element value, print element at index (number) does not exist in list 
+
+pseudocode to print odd numbers in a list
+- declare a void method expecting an int array numbers
+- name method oddPositionNumbers
+- Iterate through numbers length 
+- If numbers at index % 2 is not equal 0, print number at index
+
+pseudocode calculate running total of a list
+- declare a return void method expecting an int array numbers
+- name method runningTotalComputed
+- assign number 0 to a variable 
+- collect and store as total
+- iterate through numbers length 
+- total + number at each index
+- print the running sum at each index
+- return total
+
+pseudocode to test if string is a palindrome
+- declare a return value method expecting a string variable input
+- name method according to boolean value isPalindrome
+- initialize startComparison to 0 
+- initialize stopComparison to variable length - 1 or reverse
+- while startComparison is less than stopComparison, increment startComparison and decrement stopComparison
+- if variable at startComparison is not equal stopComparison, return false.
+- return true if it all number compared is equal
+
+pseudocode calculate sum total of a list using for,while and do while loop
+- declare a return void method expecting an int array numbers
+- name method totalSumComputed
+- assign number 0 to a variable 
+- collect and store as total
+- iterate through numbers length using for loop 
+- total + number at each index
+- print the running sum at each index
+- return total
+
+
