@@ -1,5 +1,0 @@
-
-1. Assign number to 0 to 10
-2. Calculate square of numbers
-3. Calculate cube of numbers
-4. Display results

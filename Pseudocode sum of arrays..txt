@@ -1,8 +1,0 @@
-Pseudocode sum of arrays.
-declare array variable and assign values to the array variable
-collect and store as numbers
-declare sum variable
-collect and store as sum
-loop through numbers 
-add all numbers
-display result

@@ -1,5 +1,0 @@
-  Pseudocodearrayindex
-declare and assign an array to a variable 
-collect and store as number
-iterate over array 
-find the index of an element in the array

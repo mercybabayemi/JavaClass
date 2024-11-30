@@ -50,14 +50,45 @@ pseudocode to test if string is a palindrome
 - if variable at startComparison is not equal stopComparison, return false.
 - return true if it all number compared is equal
 
-pseudocode calculate sum total of a list using for,while and do while loop
-- declare a return void method expecting an int array numbers
-- name method totalSumComputed
+pseudocode calculate sum total of a list using for loop
+- declare a return method expecting an int array numbers
+- name method firstTotalSumComputed
 - assign number 0 to a variable 
 - collect and store as total
 - iterate through numbers length using for loop 
 - total + number at each index
-- print the running sum at each index
 - return total
 
+pseudocode calculate sum total of a list using while loop
+- declare a return method expecting an int array numbers
+- name method secondTotalSumComputed
+- assign number 0 to a variable 
+- collect and store as total
+- assign number 0 to a variable
+- collect and store as item
+- set loop continuation to be while item is less than numbers length
+- total + number at each index
+- increment item
+- return total
 
+pseudocode calculate sum total of a list using do while loop
+- declare a return method expecting an int array numbers
+- name method thirdTotalSumComputed
+- assign number 0 to a variable 
+- collect and store as total
+- assign number 0 to a variable
+- collect and store as item
+- do total + number at each index
+- increment item
+- set loop continuation to be while item is less than numbers length
+- return total
+
+pseudocode for concatenating two lists
+- declare a void method expecting two arrays, one of char and the other of int
+- declare a new array object to the length of both char and int arrays
+- collect and store as newArray 
+- loop through arr1
+- collect and store elements to the newArray
+- loop through arr2
+- collect and store elements to the newArray
+- print new array
