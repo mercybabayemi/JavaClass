@@ -4,15 +4,15 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class SemiColonStoreTest{
 
 	@Test
-	public void testThatStoreNamePrintCorrectValue(){
+	public void testMajorDisplayExist(){
 		
 		//given(pre-conditions)
-		StoreType storeType = new StoreType();
+		SemiColonStore.majorDisplay();
 
 		//action(functionality tested)
-		boolean result = storeType.storeName();
-		
+		String expected = "SEMICOLON STORES\nMAIN BRANCH\nLOCATION: 312, HERBERT MACAULAY WAY, SABO, YABA, LAGOS STATE.\nTEL : 03293828343\nCashier : Oyindamola";
+
 		//check
-		assertTrue(result);
+		assertTrue(expected);
 	}
 }
