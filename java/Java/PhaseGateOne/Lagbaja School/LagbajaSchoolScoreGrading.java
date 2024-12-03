@@ -47,14 +47,13 @@ public class LagbajaSchoolScoreGrading{
 		System.out.println("\n==========================================================================================");
 	}
 	public static void displayTableContent(int[][] studentGrade){
-		for(int row = 0; row < studentGrade.length ; row++){
-			System.out.print("Student(" +( row + 1 )+ ") \t");
-			for(int column = 0; column < studentGrade[row].length; column++){
-				System.out.printf("%d  \t", studentGrade[row][column]);
-			}
-			System.out.println();
-		}
-	System.out.println("\n==========================================================================================");
+		for (int column = 0; column < studentGrade[0].length; column++) {
+			System.out.print("Student (" + (column + 1) + ")  \t");
+        			for (int row = 0; row < studentGrade.length; row++) {
+					System.out.print(studentGrade[row][column] + "\t");
+				}
+		System.out.println();
+   		}			System.out.println("\n==========================================================================================");
 
 	}
 }
