@@ -11,6 +11,7 @@ public class LagbajaSchoolScoreGrading{
 		
 		int[][] studentGrade = new int[students][subjects];
 		getScore(input, students, subjects, studentGrade);
+		displayTableHeader(subjects);
 	}
 
 	public static int getStudentNumber(Scanner input, String teacher){
@@ -26,7 +27,7 @@ public class LagbajaSchoolScoreGrading{
 	public static void getScore(Scanner input, int students,int subjects, int[][] studentGrade){
 		for(int row = 0; row < students; row++){
 			for(int column = 0; column < subjects; column++){
-				System.out.println("Enter a number between 1 - 100 as grade for subject["+ row + 1 +"], Student["+ column + 1 +"]:");
+				System.out.println("Enter a number between 1 - 100 as grade for subject ("+ (row + 1) +"), Student("+ (column + 1) +"):");
 				studentGrade[row][column] = input.nextInt();
 				while(studentGrade[row][column] < 0 || studentGrade[row][column] > 100){
 					System.out.println("Invalid input!!!\nEnter a valid input: ");
@@ -35,5 +36,13 @@ public class LagbajaSchoolScoreGrading{
 			}
 		}
 	}
-	
+	public static void displayTableHeader(int subjects){
+		System.out.println("==========================================================================================");
+		System.out.print("STUDENT\t");
+		for(int i = 0; i <= subjects; i++){
+			System.out.print("SUB(" +( i + 1 )+ ")\t");
+		}
+		System.out.print("TOT\tAVE\tPOS");
+		System.out.println("\n==========================================================================================");
+	}
 }
