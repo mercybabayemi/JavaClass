@@ -5,8 +5,8 @@ Pseudocode for lagbaja school
 - Prompt teacher for number of students
 - Collect and store as numberOfStudents
 2. Ask the teacher for the number of subjects.
- - Prompt teacher for student scores 
-- Collect and store as studentScores
+ - Prompt teacher for student subject
+- Collect and store as studentSubjects
 3. Collect the scores for every students and every subjects.
 - Declare a nested loop with the student as its row and subject as its column.
 -Assign loop to name studentGrade
