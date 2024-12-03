@@ -79,11 +79,11 @@ public class SemiColonStore{
 			System.out.println("How much did the customer give to you? ");
 			amountPaid = input.nextDouble();
 		}
-		getreceipt(input, products, productsNumber, unitsPrice, discount, amountPaid, cashiersName, customerName);
+		getReceipt(input, products, productsNumber, unitsPrice, discount, amountPaid, cashiersName, customerName);
 
 	}
 
-		public static void getreceipt( Scanner input,ArrayList<String> products, ArrayList<Integer> productsNumber, ArrayList<Integer> unitsPrice, double discount, double amountPaid, String cashiersName, String customerName){
+		public static void getReceipt( Scanner input,ArrayList<String> products, ArrayList<Integer> productsNumber, ArrayList<Integer> unitsPrice, double discount, double amountPaid, String cashiersName, String customerName){
 		majorDisplay();
 		extensionDisplay(cashiersName,customerName);
 		double subTotal = 0;
