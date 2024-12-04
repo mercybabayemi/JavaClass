@@ -72,10 +72,10 @@ public class LagbajaSchoolScoreGrading{
 		int highestScore = -1;
     		String highestIndex = "";
 		int passMark = 50;
-    		int passCount = 0;
-	  	int failCount = 0;
 
     		for (int column = 0; column < subjects; column++) {
+		int passCount = 0;
+	  	int failCount = 0;
         	System.out.print("Subject (" + (column + 1) + ") \t");
         		for (int row = 0; row < studentGrade.length; row++) {
             			subjectTotal += studentGrade[row][column];
@@ -88,9 +88,9 @@ public class LagbajaSchoolScoreGrading{
                 			lowestIndex = "Student (" + (row + 1) + ")";
 				}
 				if (studentGrade[row][column] >= passMark) {
-               				passCount++;
-           			} else {
-               			 	failCount++;
+               				passCount += 1;
+           			} else if(studentGrade[row][column] <= passMark){
+               			 	failCount += 1;
           			 }
 
         		}
@@ -106,5 +106,4 @@ public class LagbajaSchoolScoreGrading{
     		}
 	}
 
-    		
 }
