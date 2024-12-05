@@ -54,11 +54,17 @@ public class LagbajaSchoolScoreGrading{
 		System.out.println("\n==========================================================================================");
 	}
 	public static void displayTableContent(int[][] studentGrade, int subjects, int students){
+		int subjectTotal = 0;
+		int averageSubjectScore = 0;
 		for (int row = 0; row < students; row++) {
 			System.out.print("Student (" + (row + 1) + ")  \t");
         			for (int column = 0; column < subjects; column++) {
 					System.out.print(studentGrade[row][column] + "\t");
+					averageSubjectScore = subjectTotal / students;
+					subjectTotal += studentGrade[row][column];
+
 				}
+		System.out.print(subjectTotal + "\t"+  averageSubjectScore + "\t");
 		System.out.println();
    		}			System.out.println("\n==========================================================================================");
 
@@ -112,10 +118,12 @@ public class LagbajaSchoolScoreGrading{
     		String overallHighestIndex = "";
    		int overallLowestScore = Integer.MAX_VALUE;
     		String overallLowestIndex = "";
-    		int passMark = 50;
+    		int classTotalScore = 0;		
+		int passMark = 50;
     		int passCount = 0;
     		int failCount = 0;
-    		int classTotalScore = 0;
+
+
 
     		for (int row = 0; row < students; row++) {
 		passCount  = 0;
@@ -136,17 +144,16 @@ public class LagbajaSchoolScoreGrading{
 
             			if (score >= passMark) {
                 			passCount += 1;
-            			} else {
+            			} else if (score <= passMark) {
                 			failCount += 1;
-            			}
+				}
         		}
-		System.out.println(passCount);
-		System.out.println(failCount);
     		}
 
     		int classAverageScore = classTotalScore / (students * subjects);
-		System.out.printf("The hardest subject is %n");
-		System.out.printf("The easiest subject is %n");
+		System.out.println("\n==========================================================================================");
+		System.out.printf("The hardest subject is Subject %n");
+		System.out.printf("The easiest subject is Subject %n");
 		System.out.printf("The overall highest score is scored by %s scoring %d%n", overallHighestIndex, overallHighestScore);
 		System.out.printf("The overall lowest score is scored by %s scoring %d%n", overallLowestIndex, overallLowestScore);		
 
