@@ -1,11 +1,29 @@
 import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+
+
 public class MenstrualApp{
 	public static void main(String[] args){
 		getWelcomeMessage();
 		Scanner input =  new Scanner(System.in);
 		String name = getUserName(input);
 		displayIntroductoryMessage(name);
-		getUserResponse(name, input);
+
+
+		System.out.print("Enter last start date(dd,MM,yyyy): ");
+		String lastStartDate = input.nextLine();
+
+		System.out.print("Enter current start date(dd,MM,yyy): ");
+		String currentStartDate = input.nextLine();
+
+		DateTimeFormatter date = DateTimeFormatter.ofPattern("ddMMyyyy");
+
+		LocalDate lastPeriodStartTime = LocalDate.parse(lastStartDate,date);
+		LocalDate currentPeriodStartTime = LocalDate.parse(currentStartDate,date);
+
+		getUserResponse(name, input, lastPeriodStartTime, currentPeriodStartTime);
 	}
 	
 	public static void getWelcomeMessage(){
@@ -22,12 +40,12 @@ public class MenstrualApp{
 
 	}
 
-	public static void getUserResponse(String name, Scanner input){
-		System.out.printf("What would you like to calculate? %n1. Calculate next menstrual period. %n2. Calculate Ovulation date %n3. Fertile window/Safe period %n4. Calculate the luteal phase%n", name);
+	public static int getUserResponse(String name, Scanner input,LocalDate lastPeriodStartTime, LocalDate currentPeriodStartTime){
+		System.out.printf("%s, what would you like to calculate? %n1. Calculate flow date/Menstrual cycle %2. Calculate next menstrual period. %n3. Calculate Ovulation date %n4. Fertile window/Safe period %n5. Calculate the luteal phase%n", name);
 		int userResponse = input.nextInt();
 		switch(userResponse){
 			case 1:
-				System.out.println("next menstrual app");
+				System.out.println(getFlowDate(lastPeriodStartTime, currentPeriodStartTime,input,name));
 				break;
 			case 2:
 				System.out.println("ovulation date");
@@ -38,8 +56,47 @@ public class MenstrualApp{
 			case 4:
 				System.out.println("lutheal phase");
 				break;
+			case 5: 
+				System.out.println("Exit");
+				break;
+			case 6: 
+				System.out.print("");
+				break;
 			}
+		return userResponse;
 	}
 
+	public static long getFlowDate(LocalDate lastPeriodStartTime, LocalDate currentPeriodStartTime,Scanner input, String name){
+		long daysBetweenPeriod = ChronoUnit.DAYS.between(lastPeriodStartTime,currentPeriodStartTime);
+		System.out.println("Your flow date is : " + daysBetweenPeriod);
 
+		if(daysBetweenPeriod < 21){
+			System.out.println("You seem to have a short cycle also known as Polymenorrhea \nGo and see a doctor");
+		}
+		else if (daysBetweenPeriod > 35) {
+			System.out.println("You seem to have an abnormal cycle also known as Oligomenorrhea \nGo and see a doctor");
+		}
+		else if (daysBetweenPeriod > 50) {
+			System.out.println("You do not have a nmenstrual cycle\n Go and see a doctor as soon as possible!!");
+		}
+		else if (daysBetweenPeriod >= 0) {
+			System.out.println("Invalid dates inputed!!");
+		}
+
+		System.out.printf("Do you wish to continue? %n1. Main Menu %n2. Exit");
+		int response = input.nextInt();
+		switch(response){
+			case 1:
+				System.out.println(getUserResponse(name, input, lastPeriodStartTime, currentPeriodStartTime));
+				break;
+			case 2:
+				getExit();
+				break;
+		}
+		return daysBetweenPeriod;
+	}
+
+	public static void getExit(){
+		System.out.println("Thank you for using the app.\nWe hope to see you back soon.");
+	}
 }
