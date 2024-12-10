@@ -5,7 +5,7 @@ public class CreditCardValidator {
 	String card = getUserDetails(input);
 	getCardType(input,card);
 	int total = getCreditCardValidityCalculation(card);
-	System.out.print(getCardValidity(total));
+	getCardValidity(total);
 }
 
 	public static String getUserDetails(Scanner input){
@@ -50,32 +50,27 @@ public class CreditCardValidator {
 	}
 
 	public static int getCreditCardValidityCalculation(String card){
-		int oddMultiple = 1;
+		int evenPositionSum = 0;
 		int oddPositionSum = 0;
 		for(int i = card.length() - 1; i >= 0; i--){
-			if(i % 2 != 0){
-				int digit = Character.getNumericValue(card.charAt(i));
-				oddMultiple = digit * 2;
-				if (oddMultiple > 9) {
-					oddMultiple -= 9;
+			int digit = Character.getNumericValue(card.charAt(i));
+			if ((card.length() - i) % 2 == 0) {
+				digit *= 2;
+				if (digit > 9) {
+					digit -= 9;
 				}
-				oddPositionSum += oddMultiple;
+				evenPositionSum += digit;
+			}
+			else if	((card.length() - i) % 2 != 0) {	
+				digit *= 2;
+				if (digit > 9) {
+					digit -= 9;
+				}
+				oddPositionSum += digit;
 			}
 		}
 		System.out.printf("The total sum of odd numbers is %d%n", oddPositionSum);
 
-		int evenMultiple = 1;
-		int evenPositionSum = 0;
-		for(int i = card.length() - 1; i >= 0; i--){
-			if(i % 2 == 0){
-				int digit = Character.getNumericValue(card.charAt(i));
-				evenMultiple = digit * 2;
-				if (evenMultiple > 9) {
-					evenMultiple -= 9;
-				}
-				evenPositionSum += evenMultiple;
-			}
-		}
 		System.out.printf("The total sum of even numbers is %d%n", evenPositionSum);
 
 
@@ -86,12 +81,12 @@ public class CreditCardValidator {
 		return total;
 	}
 
-	public static String getCardValidity(int total) {
-		if(total % 10 == 0) {
-			return "Card number is valid.";
+	public static void getCardValidity(int total) {
+		if (total % 10 == 0) {
+			System.out.print("Card number is valid.");
 		}
-		else {
-			return "Card is not valid.";
+		else if (total % 10 != 0) {
+			System.out.print("Card is not valid.");
 		}
 	}
 
