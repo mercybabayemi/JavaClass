@@ -1,0 +1,23 @@
+STATISTICSFORPYRAMID pseudocode
+
+1. Enter estimated total number of stones used for pyramid
+2. Enter estimated number of weight of stones used to build pyramid
+3. Enter estimated number of years used to build pyramid
+4. Enter estimated numbers of workers
+5. Enter estimated numbers of working hours per day
+6. Enter estimated numbers of working days per year
+7. Enter estimated length of the pyramid
+8. Enter estimated height of the pyramid
+9. Calculate the average weight of each stone with:
+	 Total weight of stones/ number of stones
+10. Calculate the volume of how much of the pyramids was built each year with: 
+	Math.sqrt(3) / 2 * (length * length) * height
+11. Calculate the estimate of how much of the pyramids was built each year with: 
+	Total volume / number of years
+12. Calculate the estimate of how much of the pyramids was built each day with:	
+	yearly construction rate / working days per year
+13. Calculate the estimate of how much of the pyramids was built each hour with:
+	daily construction rate / working hours per day
+14.  Calculate the estimate of how much of the pyramids was built each minute with:
+    	hourly construction rate / 60
+15. Display result.

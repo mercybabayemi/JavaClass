@@ -1,0 +1,84 @@
+/* Self-Review Exercises
+2.1 Fill in the blanks in each of the following statements:
+a) A(n) __opening curly braces__ and a(n) __closing curly braces__ begin and end the body of every method.
+
+b) You can use the __if__ statement to make decisions.
+
+c) __//__ begins an end-of-line comment.
+
+d) __tab characters__, __blank lines__  and __space character__ are called white space.
+
+e) __keyword__ are reserved for use by Java.
+
+f) Java applications begin execution at method __main__.
+
+g) Methods , and display information in a command window. ##
+
+2.2 State whether each of the following is true or false. If false, explain why.
+a) Comments cause the computer to display the text after the // on the screen when the
+program executes __ False, comments allows the computer to skip the sentences till the end of the line.
+
+b) All variables must be given a type when they’re declared. True
+
+c) Java considers the variables number and d NuMbEr to be identical. __False, while the firts follows the usual camel case variable naming style, the latter is invalid..
+
+d) The remainder operator (%) can be used only with integer operands. __False, it works with all numbers, whether integer or float
+
+e) The arithmetic operators *, /, %, + and - all have the same level of precedence.__False, the *,/ and % has the same level of precedence while the +, and - have the same level of precedence.
+
+f) The identifier _ (underscore) is valid in Java 9.  ##
+
+2.3 Write statements to accomplish each of the following tasks:
+a) Declare variables c, thisIsAVariable, q76354 and number to be of type int and initialize each to 0.
+int c = 0;
+int thisIsAVariable = 0;
+int q76354 = 0;
+
+b) Prompt the user to enter an integer. 
+import java.util.Scanner;
+Scanner input = new Scanner(System.in);
+System.out.println("Enter an integer: ");
+int number = input.nextInt();
+
+c) Input an integer and assign the result to int variable value. Assume Scanner variable
+input can be used to read a value from the keyboard.
+int value = input.nextInt();
+int value = 0;
+
+d) Print "This is a Java program" on one line in the command window. Use method
+System.out.println.
+System.out.println("This is a Java program");
+
+e) Print "This is a Java program" on two lines in the command window. The first line
+should end with Java. Use method System.out.printf and two %s format specifiers.
+System.out.println("%s%n%s","This is a Java", "program");
+
+
+f) If the variable number is not equal to 7, display "The variable number is not equal to 7". 
+int variable = 10;
+if(variable != 7){
+System.out.println("The variable number is not equal to 7.");
+}
+
+
+2.4 Identify and correct the errors in each of the following statements:
+a) if (c < 7); {
+ System.out.println("c is less than 7");
+}
+
+Correct: 
+if (c < 7) {
+ System.out.println("c is less than 7");
+}
+
+b) if (c => 7) {
+ System.out.println("c is equal to or greater than 7");
+}
+
+correct: 
+if (c >= 7) {
+ System.out.println("c is equal to or greater than 7");
+}
+
+*/
+
