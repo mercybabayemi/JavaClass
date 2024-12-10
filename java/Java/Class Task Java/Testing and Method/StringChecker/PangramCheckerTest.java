@@ -12,10 +12,11 @@ public class PangramCheckerTest{
 
 		//action
 		String user_input = "The quick brown fox jumps over the lazy dog";
-		boolean checkPanagram = pangramChecker.isCharacterPresent(user_input);	
+		String femi = "qwertyuiopasdfhjklzxcvbnm";
+		boolean checkPanagram = pangramChecker.isCharacterPresent(femi);	
 
 		//check
-		boolean expected = true;
+		boolean expected = false;
 		assertEquals(expected,checkPanagram);
 	}
 }

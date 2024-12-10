@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class TestingFormatter {
+public class TestingDateFormatter {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter last start date (yyyy-MM-dd): ");
