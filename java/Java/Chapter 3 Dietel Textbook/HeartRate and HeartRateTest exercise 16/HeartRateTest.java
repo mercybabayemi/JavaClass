@@ -27,7 +27,7 @@ public class HeartRateTest{
 		System.out.printf("Client's first name: %s%nClient's last name: %s%nClient's date of birth: %d-%d-%d%n", firstName, lastName, dateOfBirthDay, dateOfBirthMonth, dateOfBirthYear);
 
 
-		System.out.printf("Client's age: %d%nClient's maximum heart rate: %d%nClient's target heart rate range: %d%% - %d%% %n", client1.getPersonAge(currentYear),client1.getPersonMaximumHeartRate(currentYear),client1.getPersonTargetHeartRateRange1(currentYear), client1.getPersonTargetHeartRateRange2(currentYear));
+		System.out.printf("Client's age: %d%nClient's maximum heart rate: %d%nClient's target heart rate range: %.2f%% - %.2f%% %n", client1.getPersonAge(currentYear),client1.getPersonMaximumHeartRate(currentYear),client1.getPersonTargetHeartRateRange1(currentYear), client1.getPersonTargetHeartRateRange2(currentYear));
 
 	}
 }

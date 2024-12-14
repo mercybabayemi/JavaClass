@@ -51,15 +51,15 @@ public class HeartRate{
 		return 220 - getPersonAge(currentYear);
 	}
 
-	public int getPersonTargetHeartRateRange1(int currentYear){
+	public double getPersonTargetHeartRateRange1(int currentYear){
 		int maximumHeartRate = getPersonMaximumHeartRate(currentYear);
-		int range1 = (50 / 100) * maximumHeartRate;
+		double range1 = 0.5 * maximumHeartRate;
 		return range1;
 	}
 
-	public int getPersonTargetHeartRateRange2(int currentYear){
+	public double getPersonTargetHeartRateRange2(int currentYear){
 		int maximumHeartRate = getPersonMaximumHeartRate(currentYear);
-		int range2 = (85 / 100) * maximumHeartRate;
+		double range2 =  0.85 * maximumHeartRate;
 		return range2;
 	}
 
