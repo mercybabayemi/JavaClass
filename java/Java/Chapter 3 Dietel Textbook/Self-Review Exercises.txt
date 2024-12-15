@@ -1,3 +1,4 @@
+/* 
 Self-Review Exercises
 3.1 Fill in the blanks in each of the following:
 a) Each class declaration that begins with keyword __public__ must be stored in a file that has exactly the same name as the class and ends with the .java filename extension.
@@ -81,3 +82,5 @@ Ans: Scanner class belongs to the java.util package which must be explicitly imp
 
 3.10 (set and get Methods) Explain the disadvantage of creating a class that has no set and get methods for an instance variable.
 Ans: The set and get method allows the programmer to put in place edgecases for data presentation and information hiding , also known as encapsulation in object oriented programming. It also allows for easy information editing and the programmer does not have to edit all the methods all over with the presence of get and set method. There is also a control on how information is presented to user who can get pass the set and get method if it is used.
+
+*/

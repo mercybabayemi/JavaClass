@@ -12,16 +12,10 @@ public class HeartRate{
 
 
 	public HeartRate(String firstName, String lastName, int dateOfBirthDay, int dateOfBirthMonth, int dateOfBirthYear){
-		if(firstName.matches("[a-zA-z]+")){
-			this.firstName = firstName;
-		}
-
-		if(lastName.matches("[a-zA-z]+")){
-			this.lastName = lastName;
-		}
-
-		this.dateOfBirthMonth = dateOfBirthMonth;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.dateOfBirthDay = dateOfBirthDay;
+		this.dateOfBirthMonth = dateOfBirthMonth;
 		this.dateOfBirthYear = dateOfBirthYear;
 	}
 
@@ -40,6 +34,30 @@ public class HeartRate{
 
 	public String getLastName(){
 			return lastName;
+	}
+
+	public void setDateOfBirthDay(int dateOfBirthDay){
+			this.dateOfBirthDay = dateOfBirthDay;
+	}
+
+	public int getDateOfBirthDay(){
+			return dateOfBirthDay;
+	}
+
+	public void setDateOfBirthMonth(int dateOfBirthMonth){
+			this.dateOfBirthMonth = dateOfBirthMonth;
+	}
+
+	public int getDateOfBirthMonth(){
+			return dateOfBirthMonth;
+	}
+
+	public void setDateOfBirthYear(int dateOfBirthYear){
+			this.dateOfBirthYear = dateOfBirthYear;
+	}
+
+	public int getDateOfBirthYear(){
+			return dateOfBirthYear;
 	}
 
 	

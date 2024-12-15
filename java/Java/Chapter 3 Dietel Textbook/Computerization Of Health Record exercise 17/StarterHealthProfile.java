@@ -27,7 +27,7 @@ public class StarterHealthProfile{
 	}
 
 	public void setFirstName(String firstName){
-			this.firstName = firstName;
+		this.firstName = firstName;
 	}
 
 	public String getFirstName(){
@@ -35,34 +35,35 @@ public class StarterHealthProfile{
 	}
 	
 	public void setLastName(String lastName){
-			this.lastName = lastName;
+		this.lastName = lastName;
 	}
 
 	public String getLastName(){
-			return lastName;
+		return lastName;
 	}
 
 	public void setGender(String gender){
-			this.gender = gender;
+		this.gender = gender;
 	}
 
 	public String getGender(){
-			return gender;
+		return gender;
+	}
 
-	public void setHeight(double height){
-			this.heightInInches = heightInInches;
+	public void setHeight(double heightInInches){
+		this.heightInInches = heightInInches;
 	}
 
 	public double getHeight(){
-			return heightInInches;
+		return heightInInches;
 	}
 
-	public void setWeight(double weight){
-			this.weightInPounds = weightInPounds;
+	public void setWeight(double weightInPounds){
+		this.weightInPounds = weightInPounds;
 	}
 
 	public double getWeight(){
-			return weightInPounds;
+		return weightInPounds;
 	}
 
 	public int getPersonAge(int currentYear){

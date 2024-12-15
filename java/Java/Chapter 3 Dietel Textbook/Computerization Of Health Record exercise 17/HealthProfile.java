@@ -25,10 +25,10 @@ public class HealthProfile{
 		System.out.print("Enter current year: ");
 		int currentYear = input.nextInt();
  
-		System.out.print("Enter your weight in pounds:"); 
+		System.out.print("Enter patient's weight in pounds:"); 
 		double weightInPounds = input.nextDouble(); 
 
-		System.out.print("Enter your height in inches:");
+		System.out.print("Enter patient's height in inches:");
 		double heightInInches = input.nextDouble();
 
 
