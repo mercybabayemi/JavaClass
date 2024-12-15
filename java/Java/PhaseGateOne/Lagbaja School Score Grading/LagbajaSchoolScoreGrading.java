@@ -44,6 +44,7 @@ public class LagbajaSchoolScoreGrading{
 			}
 		}
 	}
+
 	public static void displayTableHeader(int subjects){
 		System.out.println("==========================================================================================");
 		System.out.print("STUDENT \t");
@@ -54,49 +55,66 @@ public class LagbajaSchoolScoreGrading{
 		System.out.println("\n==========================================================================================");
 	}
 	public static void displayTableContent(int[][] studentGrade, int subjects, int students){
-		int subjectTotal = 0;
-		int averageSubjectScore = 0;
+		
+		double[] averageScores = new double[students];
+		for (int row = 0; row < students; row++) {
+			int subjectTotal = 0;
+        		for (int column = 0; column < subjects; column++) {
+				subjectTotal += studentGrade[row][column];
+			}
+		averageScores[row] = (double) subjectTotal / subjects;
+   		}
+
 		for (int row = 0; row < students; row++) {
 			System.out.print("Student (" + (row + 1) + ")  \t");
-        			for (int column = 0; column < subjects; column++) {
-					System.out.print(studentGrade[row][column] + "\t");
-					averageSubjectScore = subjectTotal / students;
-					subjectTotal += studentGrade[row][column];
+			int subjectTotal = 0;
+			for (int column = 0; column < subjects; column++) {
+				System.out.print(studentGrade[row][column] + "\t");
+				subjectTotal += studentGrade[row][column];
+			}
+			double averageScore = averageScores[row];
+			System.out.printf("%d\t%.2f\t", subjectTotal, averageScore);
 
+			int position = 1;
+			for(int i = 0; i < students; i++){
+				if(averageScores[i] > averageScore){
+					position++;
 				}
-		System.out.print(subjectTotal + "\t"+  averageSubjectScore + "\t");
-		System.out.println();
-   		}			System.out.println("\n==========================================================================================");
+			}
+			System.out.print(position);
+			System.out.println();
+		}
+	System.out.println("\n==========================================================================================");
 
 	}
 
 
 	public static void getSubjectCalculated(int[][] studentGrade, int subjects,int students) {
-   		int subjectTotal = 0;
-		int averageSubjectScore = 0;
-    		int lowestScore = Integer.MAX_VALUE;
-    		String lowestIndex = "";
+    		
+		int passMark = 50;
+		for (int column = 0; column < subjects; column++) {    
 		int highestScore = -1;
     		String highestIndex = "";
-		int passMark = 50;
-
-		for (int column = 0; column < subjects; column++) {    		
+		int lowestScore = Integer.MAX_VALUE;
+    		String lowestIndex = "";
+		int subjectTotal = 0;
+		int averageSubjectScore = 0;		
     		int passCount = 0;
 	  	int failCount = 0;
         	System.out.print("Subject (" + (column + 1) + ") \t");
         		for (int row = 0; row < students; row++) {
             			subjectTotal += studentGrade[row][column];
-				if (studentGrade[row][column] > highestScore) {
+				if (studentGrade[row][column] >= highestScore) {
                				highestScore = studentGrade[row][column];
                 			highestIndex = "Student (" + (row + 1) + ")";
 				}
-				if (studentGrade[row][column] < lowestScore) {
+				if (studentGrade[row][column] <= lowestScore) {
                 			lowestScore = studentGrade[row][column];
                 			lowestIndex = "Student (" + (row + 1) + ")";
 				}
 				if (studentGrade[row][column] >= passMark) {
                				passCount += 1;
-           			} else if(studentGrade[row][column] <= passMark){
+           			} else if(studentGrade[row][column] < passMark){
                			 	failCount += 1;
           			 }
 
@@ -105,7 +123,7 @@ public class LagbajaSchoolScoreGrading{
 			System.out.printf("Highest scoring student in Subject (%d) is: %s scoring %d\n", (column + 1), highestIndex, highestScore);
 			System.out.printf("Lowest scoring student in Subject (%d) is: %s scoring %d\n", (column + 1), lowestIndex, lowestScore);
 			System.out.printf("Total scores in Subject (%d) is: %d\n", (column + 1), subjectTotal);
-			averageSubjectScore = subjectTotal / students;
+			averageSubjectScore = subjectTotal / subjects;
 			System.out.printf("Average score for Subject (%d) is: %d\n", (column + 1), averageSubjectScore);
 			System.out.printf("Pass count for Subject (%d) is: %d\n", (column + 1), passCount);
         		System.out.printf("Fail count for Subject (%d) is: %d\n", (column + 1), failCount);
@@ -114,20 +132,19 @@ public class LagbajaSchoolScoreGrading{
 	}
 
 	public static void getOverallCalculaion(int[][] studentGrade, int subjects, int students) {
-   		int overallHighestScore = -1;
+   		
+		int overallHighestScore = -1;
     		String overallHighestIndex = "";
    		int overallLowestScore = Integer.MAX_VALUE;
     		String overallLowestIndex = "";
     		int classTotalScore = 0;		
 		int passMark = 50;
-    		int passCount = 0;
-    		int failCount = 0;
-
-
+    		int overallPassCount = 0;
+    		int overallFailCount = 0;
+		String overallPassCountIndex = "";
+    		String overallFailCountIndex = "";
 
     		for (int row = 0; row < students; row++) {
-		passCount  = 0;
-    		failCount = 0;
         		for (int column = 0; column < subjects; column++) {
             			int score = studentGrade[row][column];
             			classTotalScore += score;
@@ -141,19 +158,33 @@ public class LagbajaSchoolScoreGrading{
                 			overallLowestScore = score;
                				overallLowestIndex = "Student (" + (row + 1) + ") in Subject (" + (column + 1) + ")";
             			}
-
-            			if (score >= passMark) {
-                			passCount += 1;
-            			} else if (score <= passMark) {
-                			failCount += 1;
-				}
         		}
     		}
 
+		for (int column = 0; column < subjects; column++) {
+			int subjectPassCount  = 0;
+    			int subjectFailCount = 0;
+			for (int row = 0; row < students; row++) {
+				if (studentGrade[row][column] >= passMark) {
+                			subjectPassCount += 1;
+            			} else if (studentGrade[row][column] < passMark) {
+                			subjectFailCount += 1;
+				}
+			}
+			if (subjectPassCount >= overallPassCount) {
+                		overallPassCount = subjectPassCount;
+				overallPassCountIndex = "Subject (" + (column + 1) + ")";
+            		}
+			if (subjectFailCount >= overallFailCount || overallFailCount == 0) {
+                		overallFailCount = subjectFailCount;
+				overallFailCountIndex = "Subject (" + (column + 1) + ")";
+            		}
+      		}
+
     		int classAverageScore = classTotalScore / (students * subjects);
 		System.out.println("\n==========================================================================================");
-		System.out.printf("The hardest subject is Subject %n");
-		System.out.printf("The easiest subject is Subject %n");
+		System.out.printf("The hardest subject is %s with %d failures%n", overallFailCountIndex, overallFailCount);
+		System.out.printf("The easiest subject is %s with %d passes%n", overallPassCountIndex, overallPassCount);
 		System.out.printf("The overall highest score is scored by %s scoring %d%n", overallHighestIndex, overallHighestScore);
 		System.out.printf("The overall lowest score is scored by %s scoring %d%n", overallLowestIndex, overallLowestScore);		
 
