@@ -1,0 +1,8 @@
+Pseudocode TwolargestNumber
+Prompt user to enter a number
+iterate 10 times
+collect and store as iteration value at each point
+sort numbers
+print numbers
+initialize largestnumber and numbernexttolargestnumber
+display largestnumber and numbernexttolargestnumber
