@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 public class Diary{
 	private int diaryId;
 	private String diaryDate;
@@ -41,89 +40,27 @@ public class Diary{
 		return diaryContent;
 	}
 
-	public boolean lockDiary(){
-		isLocked = true;
+	public boolean isLocked(){
+		return isLocked;
 	}
 
-	public boolean unlockDiary(){
-		isLocked = false;
+	public void lockDiary(){
+		this.isLocked = true;
 	}
 
-	public void addEntry(){
-		diaries.add(entry);
+	public void unlockDiary(){
+		this. isLocked = false;
 	}
 
-	public void findEntryById(int diaryId){
-		for(Diary entry: diaries){
-			if(diaryId == entry.getDiaryId()){
-				System.out.printf("Diary ID: %d%n", entry.getDiaryId());
-				System.out.printf("Diary Date: %s%n", entry.getDiaryDate());
-				System.out.printf("Diary Content: %s%n", entry.getDiaryContent());
-			}
-			else{
-				System.out.println("No entry Id match found");
-			}
-		}
+	public void updateDiaryId(int newId){
+		this.diaryId = newId;
 	}
 
-	public void deleteEntry(int diaryId){
-		for(Diary entry: diaries){
-			if(diaryId == entry.getDiaryId()){
-				diaries.remove(entry);							System.out.println("Diary deleted");
-			}
-			else{
-				System.out.println("No entry Id match found");
-			}
-
-		}
+	public void updateDiaryDate(String newDate){
+		this.diaryDate = newDate;
 	}
-
-	public void updateDiaryIdById(int diaryId, int newId){
-		for(Diary entry: diaries){
-			if(diaryId = entry.getDiaryId()){
-				entry.setDiaryId(newId);
-				System.out.println("Diary Id updated");
-			}
-			else{
-				System.out.println("No entry Id match found");
-			}
-		}
-	}
-
-	public void updateDiaryDateById(int diaryId, String newDate){
-		for(Diary entry: diaries){
-			if(diaryId == entry.getDiaryId()){
-				entry.setDiaryDate(newDate);						System.out.println("Diary date updated");
-			}
-			else{
-				System.out.println("No entry Id match found");
-			}
-
-		}
-	}
-
-	public void updateDiaryContentById(int diaryId, String newContent){
-		for(Diary entry: diaries){
-			if(diaryId == entry.getDiaryId()){
-				entry.setDiaryContent(newContent);
-				System.out.println("Diary content updated");
-			}
-			else{
-				System.out.println("No entry Id match found");
-			}
-		}
-	}
-
-	public void displayEntries(){
-		for(Diary entry: diaries){
-			System.out.printf("Diary ID: %d%n", entry.getDiaryId());
-			System.out.printf("Diary Date: %s%n", entry.getDiaryDate());
-			System.out.printf("Diary Content: %s%n", entry.getDiaryContent());
-		}
-
-	}
-
-	public void exitDiary(){
-		System.out.println("Exiting>>>>>>\n We hope to see you back soon.");
+	
+	public void updateDiaryContent(String newContent){
+		this.diaryContent = newContent;
 	}
 }
