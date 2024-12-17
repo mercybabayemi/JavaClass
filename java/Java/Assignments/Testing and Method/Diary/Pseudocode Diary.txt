@@ -1,0 +1,70 @@
+Pseudocode Diary.
+
+Note: 
+- User or actor associates with :
+	Create diary
+	Lock diary
+	Unlock diary
+	Add entry
+	Find entry by id
+	Delete entry
+	Update entry
+- Add entry include unlocking the diary
+  Find entry include adding the entry
+  Delete entry include adding the entry 
+  Update entry include adding the entry
+
+Stage 1
+Create the Diary Class.
+- In diary class, declare instance variable int diaryId, String diaryDate, String diaryContent.
+- Create a constructor taking the instance variables parameters.
+- Declare and initialize the instance variables.
+- Declare setters and getters for each instance variable.
+
+Create An ArrayList To Store Diary Objects.
+- In main method inside the driver class, import ArrayList.
+- Declare and initialize the ArrayList to store diary object entry using the object reference type.
+
+Lock And Unlock Diary.
+- In diary class, create a function to lock diary taking no parameter.
+- Declare a boolean isLocked to the private instance variables.
+- Set isLocked to true.
+- Create a function to unlock diary taking no parameter.
+- Set isLocked to false.
+
+Implementing Lock And Unlock Diary.
+- when isLocked = true, prompt user to unlock diary.
+- when isLocked = false, unlock diary and proceed to next.
+
+Add Entry.
+- In diary class, create an add entry function taking no parameter.
+- Prompt user to enter diary id.
+- Collect and store input as diaryId.
+- Prompt user to enter diary date.
+- Collect and store input as diaryDate.
+- Prompt user to enter diary content.
+- Collect and store input as diaryContent.
+- Declare an object entry taking the variables as parameter.
+- Add entry to arraylist.
+
+Find Entry by Id.
+- In diary class, create a find entry by id function taking the ArrayList parameter.
+- Iterate through the ArrayList to find the entry with the matching Id.
+
+Delete Entry.
+- In the diary class, create a delete entry function taking no parameter.
+- Display all entries in ArrayList to user.
+- Prompt user to enter the id of entry to delete.
+- Remove entry from ArrayList.
+
+Update Entry.
+- In the diary class, create an update entry function taking int id and newEntry parameter.
+- Iterate through ArrayList to find matching id and set particular entry to newEntry.
+
+Display 
+- In main method, prompt for user's name.
+- Display welcome message
+- Display function menu and prompt user for choice
+- If choice is 0 or empty, display "Nothing is currently in diary"
+- If choice equals any method or function, invoke function.
+- If choice is exit, display "We hope to see you back soon."
