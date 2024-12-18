@@ -9,7 +9,7 @@ public class DiaryMain{
 		String diaryDeterminant = input.nextLine();
 
 		while(diaryDeterminant.equalsIgnoreCase("yes")) {
-			System.out.println("Welcome To Your Diary App!!!\nWhat do you want to do?\n1. Add new diary\n2. View diary entries\n3. Update a diary entry\n4. Remove a diary entry\n5. Exit\nEnter numerical value: ");
+			System.out.println("Welcome To Your Diary App!!!\nWhat do you want to do?\n1. Add new diary\n2. View diary entries\n3. Update a diary entry\n4. Delete a diary entry\n5. Exit\nEnter numerical value: ");
             		int response = input.nextInt();
             		input.nextLine();
 			
@@ -24,13 +24,13 @@ public class DiaryMain{
 					updateDiary(input,diaries);
 					break;
 				case 4:
-					removeDiary(input, diaries);
+					deleteDiary(input, diaries);
 					break;
 				case 5:
-					System.out.println("Exiting>>>>\nWe hope to see you back soon.");
+					System.out.println("Exiting>>>>");
 					break;
 				default:
-					System.out.println("Invalid choice!!!\nPlease try again.");
+					System.out.println("Invalid choice!!!\nPlease try again and enter right value: ");
 					response = input.nextInt();
             				input.nextLine();
 
@@ -110,7 +110,7 @@ public class DiaryMain{
         	}
     	}
 	
-	public static void removeDiary(Scanner input, ArrayList<Diary> diaries){
+	public static void deleteDiary(Scanner input, ArrayList<Diary> diaries){
         	System.out.print("Enter the diary ID to remove: ");
         	int diaryId = input.nextInt();
         	input.nextLine();
