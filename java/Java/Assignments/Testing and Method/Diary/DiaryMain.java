@@ -12,7 +12,10 @@ public class DiaryMain{
 			System.out.println("Welcome To Your Diary App!!!\nWhat do you want to do?\n1. Create new diary\n2. View diary entries\n3. Update a diary entry\n4. Remove a diary entry\n5. Exit\nEnter numerical value: ");
             		int response = input.nextInt();
             		input.nextLine();
-			
+
+
+			System.out.println("Do you want to create a new diary ?\n(Enter yes or no): ");
+			diaryDeterminant = input.nextLine();
 		}
 
 	}
@@ -47,9 +50,42 @@ public class DiaryMain{
             		System.out.println("No diary entries found.");
         	} else {
             		for (Diary entry : diaries) {
-                		System.out.printf("Diary ID: %d, Date: %s, Content: %s, Locked: %b\n", entry.getDiaryId(), entry.getDiaryDate(), entry.getDiaryContent(), entry.isLocked());
+                		System.out.printf("Diary ID: %d%nDate: %s%nContent: %s%nLocked: %b%n", entry.getDiaryId(), entry.getDiaryDate(), entry.getDiaryContent(), entry.isLocked());
             		}
         	}
     	}
+
+	public static void updateDiary(Scanner input, ArrayList<Diary> diaries){
+        	System.out.println("Enter the diary ID to update: ");
+        	int diaryId = input.nextInt();
+        	input.nextLine();
+
+        	Diary diaryToUpdate = null;
+        	for (Diary entry : diaries) {
+           		if (entry.getDiaryId() == diaryId) {
+                		diaryToUpdate = entry;
+				break;
+           		}
+        	}
+        	
+		if (diaryToUpdate == null) {
+            		System.out.println("Diary entry not found!");
+        	}
+		else {
+			System.out.println("Enter new diary Id: ");
+            		int newId = input.nextInt();
+			input.nextLine();
+            		System.out.println("Enter new diary date: ");
+            		String newDate = input.nextLine();
+            		System.out.print("Enter new diary content: ");
+            		String newContent = input.nextLine();
+			
+			diaryToUpdate.updateDiaryId(newId);
+            		diaryToUpdate.updateDiaryDate(newDate);
+            		diaryToUpdate.updateDiaryContent(newContent);
+            		System.out.println("Diary entry updated successfully!");
+        }
+    }
+
 
 }
