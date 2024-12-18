@@ -9,10 +9,33 @@ public class DiaryMain{
 		String diaryDeterminant = input.nextLine();
 
 		while(diaryDeterminant.equalsIgnoreCase("yes")) {
-			System.out.println("Welcome To Your Diary App!!!\nWhat do you want to do?\n1. Create new diary\n2. View diary entries\n3. Update a diary entry\n4. Remove a diary entry\n5. Exit\nEnter numerical value: ");
+			System.out.println("Welcome To Your Diary App!!!\nWhat do you want to do?\n1. Add new diary\n2. View diary entries\n3. Update a diary entry\n4. Remove a diary entry\n5. Exit\nEnter numerical value: ");
             		int response = input.nextInt();
             		input.nextLine();
+			
+			switch(response){
+				case 1:
+					addDiary(input,diaries);
+					break;
+				case 2:
+					viewDiaries(diaries);
+					break;
+				case 3:
+					updateDiary(input,diaries);
+					break;
+				case 4:
+					removeDiary(input, diaries);
+					break;
+				case 5:
+					System.out.println("Exiting>>>>\nWe hope to see you back soon.");
+					break;
+				default:
+					System.out.println("Invalid choice!!!\nPlease try again.");
+					response = input.nextInt();
+            				input.nextLine();
 
+					break;
+			}
 
 			System.out.println("Do you want to create a new diary ?\n(Enter yes or no): ");
 			diaryDeterminant = input.nextLine();
@@ -84,8 +107,28 @@ public class DiaryMain{
             		diaryToUpdate.updateDiaryDate(newDate);
             		diaryToUpdate.updateDiaryContent(newContent);
             		System.out.println("Diary entry updated successfully!");
-        }
-    }
+        	}
+    	}
+	
+	public static void removeDiary(Scanner input, ArrayList<Diary> diaries){
+        	System.out.print("Enter the diary ID to remove: ");
+        	int diaryId = input.nextInt();
+        	input.nextLine();
+        	Diary diaryToRemove = null;
+        	for (Diary entry : diaries) {
+            		if (entry.getDiaryId() == diaryId) {
+                		diaryToRemove = entry;
+                		break;
+            		}
+        	}
 
+        	if (diaryToRemove == null) {
+            		System.out.println("Diary entry not found!");
+        	} 
+		else {
+            		diaries.remove(diaryToRemove);
+            		System.out.println("Diary entry removed successfully!");
+        	}
+    	}
 
 }
