@@ -41,5 +41,15 @@ public class DiaryMain{
             		System.out.println("The diary is now unlocked.");
         	}
 	}
+    	public static void viewDiaries(ArrayList<Diary> diaries) {
+        	System.out.println("Displaying all diary entries:");
+        	if (diaries.isEmpty()) {
+            		System.out.println("No diary entries found.");
+        	} else {
+            		for (Diary entry : diaries) {
+                		System.out.printf("Diary ID: %d, Date: %s, Content: %s, Locked: %b\n", entry.getDiaryId(), entry.getDiaryDate(), entry.getDiaryContent(), entry.isLocked());
+            		}
+        	}
+    	}
 
 }
