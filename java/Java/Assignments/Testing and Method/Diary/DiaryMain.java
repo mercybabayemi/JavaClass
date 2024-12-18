@@ -33,8 +33,6 @@ public class DiaryMain{
 					System.out.println("Invalid choice!!!\nPlease try again and enter right value: ");
 					response = input.nextInt();
             				input.nextLine();
-
-					break;
 			}
 
 			System.out.println("Do you want to create a new diary ?\n(Enter yes or no): ");
