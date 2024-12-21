@@ -11,7 +11,6 @@ public class Factorial{
 	while(number >= 1){
 		factorial *= number;
 		number--;
-		count++;
 	}
 	
 	System.out.print(factorial);	

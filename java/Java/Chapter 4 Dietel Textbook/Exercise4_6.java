@@ -4,7 +4,7 @@ public class Exercise4_6{
 		int x = 1;
 		while(x <= 10){
 			sum += x;
-			System.out.print("The sum is : " + sum);
+			System.out.println("The sum is : " + sum);
 			x++;
 		}
 

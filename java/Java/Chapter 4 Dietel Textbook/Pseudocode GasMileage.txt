@@ -1,0 +1,16 @@
+Pseudocode GasMileage
+Stage one
+1. Input miles driven for each trip in integer.
+2. Input gallons used for each trip in integer.
+3. Print combined miles per gallon for all trip.
+4. Average calculation should produce float point result.
+5. Use class Scanner and sentinel controlled loop to obtain input.
+
+Stage two
+1. Prompt user to input miles driven for each trip in integer.
+2. Collect and store result as 'milesDriven'
+3. Prompt user to input gallons used per each trip in integer.
+4. Collect and store as 'gallonsUsed'
+5. Calculated all miles per galoon used by dividing miles driven by gallons used
+6. Collect and store result as milesPerGallon
+7. Display result of milesPerGallon

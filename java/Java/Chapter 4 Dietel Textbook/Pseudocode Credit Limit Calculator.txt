@@ -1,0 +1,31 @@
+Pseudocode Credit Limit Calculator
+Stage One
+1. Determine whether department store customers has exceeded credit limit.
+2. Check the following information for each customer:
+	a) account number.
+	b) balance at the beginning of the month.
+	c) total of all items charged by the customer this month.
+	d) total of all credits applied to the customer’s account this month.
+	e) allowed credit limit.
+3. Input information as integer
+4. Calculate new balance, that is, beginning balance + charges - credit
+5. Display new balance 
+6. Determine whether new balance exceeds customers credit limit.
+7. If credit limit is exceeded, the program should display "Credit limit exceeded."
+
+Stage Two
+1. Prompt user to enter account number.
+2. Collect and store as "accountNumber".
+3. Prompt user to enter account balance at the beginning of month.
+4. Collect and store as "accountBalance".
+5. Prompt user to enter total of all items charged by the customer this month.
+6. Collect and store as "totalOfAllItems".
+7. Prompt user to enter total of all credits applied to customer in this month.
+8. Collect and store as "totalOfAllCredits".
+9. Prompt user to enter allowed credit limit.
+10. Collect and store as "creditLimit".
+11. Calculate new balance with:
+	"accountBalance" + "totalOfAllItems" - "totalOfAllCredits";
+12. Collect and save as "newBalance"
+13. Determine whether new balance exceeds customer credit limit.
+14. If "creditLimit" is greater than "newBalance", display "Credit limit exceeded."
