@@ -28,4 +28,4 @@ Stage Two
 	"accountBalance" + "totalOfAllItems" - "totalOfAllCredits";
 12. Collect and save as "newBalance"
 13. Determine whether new balance exceeds customer credit limit.
-14. If "creditLimit" is greater than "newBalance", display "Credit limit exceeded."
+14. If "newBalance" is greater than "creditLimit", display "Credit limit exceeded."

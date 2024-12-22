@@ -7,11 +7,11 @@ public class TwoLargestNumber{
 
 	int[] numbers = new int[10];
 
-	for(int iterate = 0 ; iterate <= 9; iterate++){
+	for(int number = 0 ; number <= 9; number++){
 		
 		System.out.print("Enter a number: ");
 
-		numbers[iterate] = input.nextInt();
+		numbers[number] = input.nextInt();
 	}
 
 	Arrays.sort(numbers);
@@ -21,7 +21,7 @@ public class TwoLargestNumber{
 	int largestNumber = numbers[9];
 	int nextLargestNumber = numbers[8];
 
-	System.out.printf("Largest number is %d%n The next largest number is %d", largestNumber, nextLargestNumber);
+	System.out.printf("Largest number is %d%nThe next largest number is %d", largestNumber, nextLargestNumber);
 
 
 
