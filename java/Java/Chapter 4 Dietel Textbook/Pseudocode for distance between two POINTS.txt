@@ -1,0 +1,12 @@
+Pseudocode for distance between two points.
+- Prompt user to enter the x coordinate for point 1
+- Collect and save as pointOneX
+- Prompt user to enter the y coordinate for point 1
+- Collect and store as pointOneY
+- Prompt user to enter the x coordinate for point 2
+- Collect and save as pointTwoX
+- Prompt user to enter the y coordinate for point 2
+- Collect and store as pointTwoY
+- If pointOneX is equal to pointTwoX, display "The points are on a line parallel to the X-axis and perpendicular to Y-axis."
+- Else if pointOneY is equal to pointTwoY, "The points are on a line parallel to the Y-axis and perpendicular to X-axis."
+- Else display "Line is not perpendicular to axis.
