@@ -1,20 +1,37 @@
-public class WorldPopulationGrowthCalculator{
+import java.util.Scanner;
+public class WorldPopulationGrowth{
 	public static void main(String[] args){
+		
+		Scanner input = new Scanner(System.in);
 
-	long currentWorldPopulation = 8100000000L;
-	double annualGrowthRate = 1.06 ;
-	double percentageAnnualGrowthRate = annualGrowthRate / 100;
+		System.out.println("Enter current world population : ");
 
-	double yearOnePopulation = Math.pow(currentWorldPopulation * (1 + percentageAnnualGrowthRate), 1);
+		long currentWorldPopulation = input.nextLong();
 
-	double yearTwoPopulation = Math.pow(currentWorldPopulation * (1 + percentageAnnualGrowthRate), 2);
+		System.out.println("Enter the current annual growthrate : ");
 
-	double yearThreePopulation = Math.pow(currentWorldPopulation * (1 + percentageAnnualGrowthRate), 3);
+		double annualGrowthRate = input.nextDouble();
 
-	double yearFourPopulation = Math.pow(currentWorldPopulation * (1 + percentageAnnualGrowthRate), 4);
+		double growthFactor = 1 + annualGrowthRate;
 
-	double yearFivePopulation = Math.pow(currentWorldPopulation * (1 + percentageAnnualGrowthRate), 5);
+		int numberOfYears = 75;
+		
+		long previousPopulation = 8091000000L;
 
-	System.out.printf("The calculated world population for year one is %.2f%nThe calculated world population for year two is %.2f%nThe calculated world population for year three is %.2f%nThe calculated world population for year four is %.2f%nThe calculated world population for year five is %.2f%n", yearOnePopulation, yearTwoPopulation, yearThreePopulation, yearFourPopulation, yearFivePopulation);
+		System.out.printf("%s%40s%40s%n","Year", "Anticipated World Population", "Numerical Increase");
+
+		for(int year = 1; year <= numberOfYears; year++){
+			double calculatedPopulation = currentWorldPopulation * Math.pow(growthFactor, year);
+			System.out.printf("%2d%40.2f%40.2f%n", year, calculatedPopulation, calculatedPopulation - previousPopulation);
+
+			previousPopulation = (long) calculatedPopulation;
+		}
+
+		long doubledPopulation = currentWorldPopulation * 2;
+
+		double yearOfDoubledPopulation = Math.log( doubledPopulation / currentWorldPopulation)/ Math.log( growthFactor );
+
+		System.out.printf("The calculated year of doubled current population is %.2f", yearOfDoubledPopulation);
+
 	}
 }

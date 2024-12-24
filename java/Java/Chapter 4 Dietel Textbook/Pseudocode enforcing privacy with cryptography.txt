@@ -1,0 +1,10 @@
+Pseudocode enforcing privacy with cryptography.
+- All data is transmitted as four digit integers. 
+- Prompt user to enter a four digit integer.
+- Collect and store as firstNumber
+- While digit length is less than 4, keep prompting.
+- Replace each didgit with the result of adding 7 to the digit and get the remainder after diving the new value by 10.
+- Swap the first digit with the third and swap the second digit with the fourth.
+- Then print theencrypted integer.
+
+- A separate application that input encrypted four digit integer aand decrypt it by reversing the encryption scheme to form the original number.
