@@ -61,11 +61,7 @@ public class CreditCardValidator {
 				}
 				evenPositionSum += digit;
 			}
-			else if	((card.length() - i) % 2 != 0) {	
-				digit *= 2;
-				if (digit > 9) {
-					digit -= 9;
-				}
+			else {	
 				oddPositionSum += digit;
 			}
 		}
