@@ -1,0 +1,55 @@
+Pseudocode phonebook
+Stage 1
+- Display the following and allow user to choose whether they want to:
+1. Add contact
+2. Remove contact
+3. Find contact by phone number
+4. Find contact by first name
+5. Find contact by last name
+6. Edit contact
+7. Exit
+
+Stage 2
+- Display the following:
+1. Add contact
+- Declare an empty collection for phoneNumbers
+- Prompt user to enter phone number
+- Collect and store as phoneNumber
+- Append to phoneNumbers
+- Declare an empty collection as firstNames
+- Prompt user to enter phoneNumber's first name
+- Collect and store as firstName
+- Append to firstNames
+- Declare an empty collection for lastNames
+- Prompt user to enter last name 
+- Collect and store as lastName
+- Append to lastNames
+- Ask whether user wants to add another contact by returning to main menu or exiting
+
+
+2. Remove contact
+- Remove contact using index at declared collections
+- Display element has been removed from phonebook
+- Ask whether user wants to return to main menu or exit
+
+3. Find contact by phone number
+- find contact by the element at index in phoneNumbers
+- Display element found in certain index in phonebook
+- Ask whether user wants to return to main menu or exit
+
+4. Find contact by first name
+- find contact by the element at index in firstNumbers
+- Display element found in certain index in phonebook
+- Ask whether user wants to return to main menu or exit
+
+
+5. Find contact by last name
+- find contact by the element at index in lastNames
+- Display element found in certain index in phonebook
+- Ask whether user wants to return to main menu or exit
+
+
+6. Edit contact
+- Replace specific information at certain index by displaying items in index and asking the position user wants to edit 
+- Display new elements in phonebook
+- Ask whether user wants to return to main menu or exit

@@ -181,7 +181,7 @@ public class LagbajaSchoolScoreGrading{
             		}
       		}
 
-    		int classAverageScore = classTotalScore / (students * subjects);
+    		double classAverageScore = (double) classTotalScore / (students * subjects);
 		System.out.println("\n==========================================================================================");
 		System.out.printf("The hardest subject is %s with %d failures%n", overallFailCountIndex, overallFailCount);
 		System.out.printf("The easiest subject is %s with %d passes%n", overallPassCountIndex, overallPassCount);
@@ -202,7 +202,7 @@ public class LagbajaSchoolScoreGrading{
 		System.out.println();
     		System.out.println("\n==========================================================================================");
     		System.out.printf("Class total score is: %d\n", classTotalScore);
-    		System.out.printf("Class Average score is: %d\n", classAverageScore);
+    		System.out.printf("Class Average score is: %.2f\n", classAverageScore);
     		System.out.println("\n==========================================================================================");
 	}
 
