@@ -79,6 +79,8 @@ public class LagbajaSchoolScoreGrading{
 			for(int i = 0; i < students; i++){
 				if(averageScores[i] > averageScore){
 					position++;
+				}else{
+			
 				}
 			}
 			System.out.print(position);
