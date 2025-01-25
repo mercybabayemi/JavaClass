@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/java/java" isTestSource="true" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="AirConditionerScenerio" level="project" />
+    <orderEntry type="library" name="CreditCardValidator" level="project" />
+    <orderEntry type="library" name="junit standalone and jupiter file checker" level="project" />
+    <orderEntry type="library" name="MBTI" level="project" />
+    <orderEntry type="library" name="Menstrual App" level="project" />
+    <orderEntry type="library" name="Semicolon store Checkout" level="project" />
+    <orderEntry type="library" name="Lagbaja School Score Grading" level="project" />
+    <orderEntry type="library" name="PositiveAndNegativeCount" level="project" />
+    <orderEntry type="library" name="PrimeChecker" level="project" />
+    <orderEntry type="library" name="Pizza Order" level="project" />
+    <orderEntry type="library" name="GetIndex" level="project" />
+    <orderEntry type="library" name="StringChecker" level="project" />
+  </component>
+</module>
