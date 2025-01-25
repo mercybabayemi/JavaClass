@@ -1,3 +1,5 @@
+package Assignments;
+
 import java.util.Scanner;
 public class ComputeVolume{
 	public static void main(String[]args){

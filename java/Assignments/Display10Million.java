@@ -1,3 +1,5 @@
+package Assignments;
+
 public class Display10Million{
 	public static void main(String[]args){
 

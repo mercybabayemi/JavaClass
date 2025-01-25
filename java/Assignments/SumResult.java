@@ -1,3 +1,5 @@
+package Assignments;
+
 public class SumResult{
 	public static void main(String[]args){
 	int sum = (4*10)+2*4/2;

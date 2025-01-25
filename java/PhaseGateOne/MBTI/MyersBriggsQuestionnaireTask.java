@@ -1,3 +1,5 @@
+package PhaseGateOne.MBTI;
+
 import java.util.Scanner;
 
 public class MyersBriggsQuestionnaireTask{

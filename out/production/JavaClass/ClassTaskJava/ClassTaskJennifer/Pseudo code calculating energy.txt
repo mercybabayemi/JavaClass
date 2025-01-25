@@ -1,0 +1,14 @@
+Pseudo code  calculating energy
+
+- prompt user to enter amount of water in kilogram 
+- collect and store as waterAmount
+- prompt user to enter initial temperature
+- collect and store as initialTemperature
+- prompt user to enter final temperature
+- collect and store as finalTemperature
+- calculate energy needed with :
+		 M * (finalTemperature - initialTemperature)
+
+-where m is the weight of water in kilogram, temperature are in degrees Celsius and energy q is measures in joules.
+- collect and store result as energy
+- Display energy

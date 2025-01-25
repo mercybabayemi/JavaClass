@@ -1,0 +1,7 @@
+exercise 4.35(Java statement)
+
+//value of x after execution...
+x = 5
+x += x++ -5
+
+x = 5, the post increment will be activated if there is another x after.

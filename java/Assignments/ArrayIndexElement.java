@@ -1,3 +1,5 @@
+package Assignments;
+
 public class ArrayIndexElement{
 	public static void main(String[] args){
 	

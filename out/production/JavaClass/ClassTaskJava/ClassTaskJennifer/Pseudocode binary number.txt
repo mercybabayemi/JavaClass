@@ -1,0 +1,14 @@
+Pseudocode binary number
+Prompt user to enter a number
+collect it
+store it as number
+calculate firstnumber with number % 2
+collect and store as firstnumber
+calculate secondnumber with firstnumber % 2
+collect and store as secondnumber
+calculate thirdtrial with number / 2
+collect and store as thirdtrial
+calculate thirdnumber with thirdtrial / 2
+collect and store as thirdnumber
+
+display firstnumber, secondnumber and thirdnumber

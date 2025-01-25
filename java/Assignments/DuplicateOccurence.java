@@ -1,3 +1,5 @@
+package Assignments;
+
 public class DuplicateOccurence{
 	public static void main(String[] args){
 

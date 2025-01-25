@@ -1,3 +1,5 @@
+package Assignments;
+
 public class MultiplicationTable{
 	public static void main(String [ ] args){
 for(int multipleNumber = 1; multipleNumber <= 9; multipleNumber++ ){

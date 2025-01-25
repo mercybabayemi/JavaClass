@@ -1,0 +1,9 @@
+Pseudocode Ten Number Largest
+- Initialise counter to 0
+- Initialise largestNumber to 0
+- Prompt user to enter a number
+- Collect and save as "number"
+- While counter is less than 10, if number is greater than largestNumber , largest number is equal to number
+- Increment counter
+- Prompt user again for number
+- Display largestNumber

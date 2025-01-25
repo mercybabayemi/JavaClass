@@ -1,0 +1,24 @@
+Pseudocode BmiCalculator
+Stage 1
+- Prompt user to enter weight in pounds
+- Prompt user to enter height in inches
+- Calculate users body mass index
+- Display bmi categories and their values
+
+Stage 2
+- Prompt user to enter weight in pounds
+- Collect input
+- Save result as 'weightInPounds'
+- Prompt user to enter height in inches
+- Collect input
+- Save result as 'heightInInches'
+- Calculate users body mass index with:
+	weightInPounds * 703 / heightInInches * heightInInches
+- Collect result
+- Store as 'calculation'
+- Display bmi values and categories: 
+BMI below 18.5 = Underweight
+BMI 18.5 to 24.9 = Normal weight
+BMI 25.0 to 29.9 = Overweight
+BMI 30.0 and higher = Obese
+BMI 40 and higher = Morbidly obese

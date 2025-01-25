@@ -1,0 +1,21 @@
+PSEUDOCODE OF POWERCALCULATION 
+Stage 1
+- Declare class
+- Declare main methods
+- Prompt user to enter number for base and exponent
+- Initialize result multiplier
+- iterate condition and statement
+- Multiply result by base
+- Automate counter
+- Display result
+
+Stage 2
+- Declare class
+- Declare main methods
+- Prompt user to enter number for base 
+- Prompt user to enter number for exponent
+- Initialize 'result' multiplier to 1
+- iterate condition and statement using for loop
+- Multiply result by base
+- Increment or add one to control variable
+- Display 'The base %d raised to the power of %d is %d'.

@@ -1,3 +1,5 @@
+package Assignments;
+
 import java.util.Scanner;
 public class CalculateInterest{
 	public static void main(String[]args){

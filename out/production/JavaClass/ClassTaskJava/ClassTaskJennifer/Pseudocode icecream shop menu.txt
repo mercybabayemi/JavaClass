@@ -1,0 +1,8 @@
+Pseudocode icecream shop menu
+prompt user to enter choice in outer switch for types of dessert such as icecream
+sundae
+shake 
+prompt user to enter choice in inner switch for flavor selection such as chocolate 
+vanilla 
+strawberry
+Display result

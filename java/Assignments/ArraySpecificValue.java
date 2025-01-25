@@ -1,3 +1,5 @@
+package Assignments;
+
 public class ArraySpecificValue{
 	public static void main(String[] args){
 	

@@ -1,3 +1,5 @@
+package Assignments;
+
 public class Table30{
 	public static void main(String [] args){
 	

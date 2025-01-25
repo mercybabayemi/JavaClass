@@ -1,3 +1,5 @@
+package Assignments;
+
 public class SumDisplay{
 	public static void main(String[]args){
 	

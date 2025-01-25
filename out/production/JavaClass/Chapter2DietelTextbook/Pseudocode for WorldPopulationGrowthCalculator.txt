@@ -1,0 +1,23 @@
+Pseudocode for WorldPopulationGrowthCalculator
+Stage 1
+- Enter the current world population
+- Enter the annual world population growth rate.
+- Calculate the estimated world population increase rate with : 
+		worldPopulation * growthRate
+- Calculate the estimated world population increase in one year with: 
+		worldPopulation + increasedRate
+- Repeat process of year 1 for year 2, 3, 4 and 5
+
+Stage 2
+- Enter the current world population
+- Collect current world population.
+- Store as currentWorldPopulation
+- Enter the annual world population growth rate 
+- Collect annual growth rate 
+- store as annualGrowthRate
+- Calculate estimated world population increase in a year with: 
+		Math.pow(currentWorldPopulation * (1 + annualGrowthRate), numberOfYears)
+- Collect result 
+- Store as yearOnePopulation
+- Repeat process of year 1 for year 2, 3, four and five.
+- Displayresults

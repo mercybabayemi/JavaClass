@@ -1,3 +1,5 @@
+package Assignments;
+
 import java.util.Scanner;
 public class NegativePositiveValues{
 	public static void main(String [] args){

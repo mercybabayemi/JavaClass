@@ -1,3 +1,5 @@
+package Assignments;
+
 public class ReverseAlphabets{
 	public static void main(String [] args){
 

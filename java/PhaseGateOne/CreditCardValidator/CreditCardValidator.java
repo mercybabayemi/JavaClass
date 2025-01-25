@@ -1,12 +1,14 @@
-import java.util.Scanner;      
+package PhaseGateOne.CreditCardValidator;
+
+import java.util.Scanner;
 public class CreditCardValidator {
 	public static void main(String[] args) {
-	Scanner input = new Scanner(System.in);
-	String card = getUserDetails(input);
-	getCardType(input,card);
-	int total = getCreditCardValidityCalculation(card);
-	getCardValidity(total);
-}
+		Scanner input = new Scanner(System.in);
+		String card = getUserDetails(input);
+		getCardType(input,card);
+		int total = getCreditCardValidityCalculation(card);
+		getCardValidity(total);
+	}
 
 	public static String getUserDetails(Scanner input){
 		String card = "";

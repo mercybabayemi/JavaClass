@@ -1,5 +1,7 @@
 /**Prompt user to enter five numbers, Count the numbers of positive numbers input, Count the numbers of negative numbers input, Count the numbers of zero numbers input*/
 
+package Assignments;
+
 import java.util.Scanner; //import declaration helps the compiler locate the class Scanner in java predefined packages
 
 public class NegativePositiveZeroValues{ //class declaration

@@ -1,0 +1,190 @@
+Self-Review Exercises
+4.1 Fill in the blanks in each of the following statements:
+a) All programs can be written in terms of three types of control structures: __sequence structure__ , __Selection structure__ and __Iteration structure__.
+b) The __if else or double selection __ statement is used to execute one action when a condition is true and another when that condition is false.
+c) Repeating a set of instructions a specific number of times is called __counter controlled or definite__ iteration.
+d) When it’s not known in advance how many times a set of statements will be repeated, a(n) __sentinel /flag/ dummy__ value can be used to terminate the iteration.
+e) The __sequence__ structure is built into Java; by default, statements execute in the order they appear.
+f) Instance variables of types char, byte, short, int, long, float and double are all given
+the value __0_ by default.
+g) If the increment operator is __prefix__ to a variable, first the variable is incremented by 1, then its new value is used in the expression.
+h) When the declaration int y = 5; is followed by the assignment y += 3.3; the value of y is __5__.
+
+
+4.2 State whether each of the following is true or false. If false, explain why.
+a) An algorithm is a procedure for solving a problem in terms of the actions to execute and the order in which they execute.
+Ans = true
+
+b) A set of statements contained within a pair of parentheses is called a block.
+Ans= false. A block is marked by curly braces not parenthesis. 
+
+c) A selection statement repeats an action while a condition remains true.
+Ans= false. An iteration structure repeats an action while a condition remain true. However, a selection statement checks if a condition is true or false and performs the instruction given.
+
+d) A nested control statement appears in the body of another control statement.
+Ans= true.
+
+e) Java provides the arithmetic compound assignment operators +=, -=, *=, /= and %= for abbreviating assignment expressions.
+Ans = true.
+ 
+f) The primitive types (boolean, char, byte, short, int, long, float and double) are portable across only Windows platforms.
+Ans = False, this cut across all platforms , not restricted to only windows platforms.
+
+g) Specifying the order in which statements execute in a program is called program control.
+Ans = False, they are called sequential exacution.
+
+h) The unary cast operator (double) creates a temporary integer copy of its operand.
+Ans= false. Double casting does not create an integer. It creates a temporary variable copy of its type.
+
+i) Instance variables of type boolean are given the value true by default.
+Ans = false.
+
+j) Pseudocode helps you think out a program before attempting to write it in a programming language.
+Ans= true.
+
+4.3 Write four different Java statements that each add 1 to integer variable x.
+Ans = x = 10;
+x = x + 1;
+x += 1;
+++x;
+x++;
+
+4.4 Write Java statements to accomplish each of the following tasks:
+a) Use one statement to assign the sum of x and y to z, then increment x by 1.
+Ans =
+z = x++ + y;
+
+b) Test whether variable count is greater than 10. If it is, print "Count is greater than 10".
+Ans = 
+if(count > 10){
+	System.out.print("Count is greater than 10");
+}
+
+c) Use one statement to decrement the variable x by 1, then subtract it from variable total and store the result in variable total. 
+Ans = 
+variableTotal = --x - variableTotal;
+
+d) Calculate the remainder after q is divided by divisor, and assign the result to q. Write this statement in two different ways.
+Ans = 
+q = q / divisor;
+q /= divisor;
+
+4.5 Write a Java statement to accomplish each of the following tasks:
+a) Declare variable sum of type int and initialize it to 0.
+Ans = 
+int sum = 0;
+
+b) Declare variable x of type int and initialize it to 1.
+Ans =
+int x = 1;
+
+c) Add variable x to variable sum, and assign the result to variable sum.
+Ans = 
+int sum += x;
+
+d) Print "The sum is: ", followed by the value of variable sum.
+Ans =
+System.out.print("The sum is : " + sum);
+
+4.6 Combine the statements that you wrote in Exercise 4.5 into a Java application that calculates and prints the sum of the integers from 1 to 10. Use a while statement to loop through the calculation and increment statements. The loop should terminate when the value of x becomes 11.
+Ans = 
+public class Exercise4_6{
+	public static void main(String[] args){
+		int sum = 0;
+		int x = 1;
+		while(x <= 10){
+			sum += x;
+			System.out.print("The sum is : " + sum);
+			x++;
+		}
+	}
+}
+
+4.7 Determine the value of the variables in the statement product *= x++; after the calculation is performed. Assume that all variables are type int and initially have the value 5.
+Ans = 25 because 1 will be added to x if we print it again 
+
+
+4.8 Identify and correct the errors in each of the following code segments—assume that all variables have been properly declared and initialized:
+	a)  
+1 while (c <= 5) {
+2 	product *= c;
+3 	++c; 
+4 }
+	b)
+1 if (gender == 1) {
+2 	System.out.println("Woman");
+3 }
+4 else{
+5 	System.out.println("Man");
+6 } 
+
+4.9 What is wrong with the following while statement?
+1 while (z >= 0) {
+2 sum += z;
+3 } 
+Ans = No initialization for z and sum prior to be sure if the condition is true or false. There is no postfix or prefix for z as well. The wile loop might run infinitely.
+
+4.10 Compare and contrast the if single-selection statement and the while iteration statement.
+How are these two statements similar? How are they different?
+Ans = The major difference between both is their keywords, "if" and "while"
+
+4.11 Explain what happens when a Java program attempts to divide one integer by another.
+What happens to the fractional part of the calculation? How can you avoid that outcome?
+Ans = The fractional part is truncated or thrown away and it gives an integer result. In order to get an accurate result, we are advised to use double or big decimals for larger numbers or account that demands accuracy.
+
+4.12 Describe the two ways in which control statements can be combined.
+Ans = Control statements can be written as one conditional statement to perform a certain action or as a nested conditional statement to check certain conditions and perform its action if true.
+
+4.13 What type of repetition would be appropriate for obtaining an input from the user until the user indicates there is no more input to provide? What type would be appropriate for calculating the factorial of 5? Briefly describe how each of these tasks could be performed.
+Ans = The type of repetition appropriate to obtain an input from user until user indicates there is no input to provide will be a sentinel while loop. Whenever the user enters input that is not the flag value or sentinel value, the iteration continues until the user enters 
+To calculate a factorial of 5, a while loop will be appropriate to use. The number calculated and inputted in the condition will be deducted at each iteration while number is greater than or equal to 1.
+
+4.14 If integers x and y are set to 7 and 3, what is the value of x after x = y++ and x = ++y?
+Ans = x = 7
+y = 3
+x = y++ means 3 + 1 = 4
+x = ++y means 1 + 3 = 4
+
+4.15 Identify and correct the errors in each of the following pieces of code. [Note: There may be more than one error in each piece of code.]
+a) if (age >= 65);
+ System.out.println("Age is greater than or equal to 65");
+else
+ System.out.println("Age is less than 65)"
+Ans =  
+if (age >= 65){
+	System.out.println("Age is greater than or equal to 65");
+}
+else{
+	System.out.println("Age is less than 65");
+}
+
+b) int x == 1, total == 0;
+ while (x <= 10) {
+ total ++x;
+ System.out.println(x);
+}
+Ans = 
+ int x = 1;
+ total = 0;
+ while(x <= 10) {
+ 	total ++x;
+	System.out.println(x);
+}
+
+c) while (x <= 100)
+ total += x;
+ ++x;
+Ans = 
+while (x <= 100){
+	total += x;
+	++x;
+}
+
+
+d) while (y =! 0)
+ { 
+System.out.println (y);
+Ans = 
+while (y =! 0){ 
+	System.out.println (y);
+}

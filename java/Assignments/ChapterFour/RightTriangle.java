@@ -1,3 +1,5 @@
+package Assignments.ChapterFour;
+
 import java.util.Scanner;
 public class RightTriangle{ 
  	public static void main(String[] args){ 	

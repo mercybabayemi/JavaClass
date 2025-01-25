@@ -1,3 +1,5 @@
+package Assignments;
+
 public class ArrayTrial{
   public static void main(String[] args){
 

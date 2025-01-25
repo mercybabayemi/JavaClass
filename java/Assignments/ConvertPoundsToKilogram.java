@@ -1,3 +1,5 @@
+package Assignments;
+
 import java.util.Scanner;
 public class ConvertPoundsToKilogram{
 	public static void main(String[]args){

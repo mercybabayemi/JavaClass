@@ -1,3 +1,5 @@
+package Assignments;
+
 public class Patterns{
 	public static void main( String[ ]args){
 System.out.println("Pattern A\tPattern B\tPattern C\tPattern D");

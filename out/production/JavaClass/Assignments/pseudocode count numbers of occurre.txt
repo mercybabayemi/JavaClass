@@ -1,0 +1,4 @@
+pseudocode count numbers of occurrence
+Program should read number between 1 to 50 number
+Count occurences of each integer
+Display result of number in count times

@@ -1,8 +1,10 @@
+package Assignments;
+
 public class Name{
 	private String name; // instance variable
 
 	// constructor initializes name with parameter name 
-	public Name(String name) { // constructor name is class name
+	public Name() { // constructor name is class name
 		this.name = name; 
 	} 
 

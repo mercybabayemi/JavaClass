@@ -1,0 +1,25 @@
+PSEUDOCODE OF TWO NUMBERS AND SUM
+Stage 1
+- Declare class
+- Declare main methods
+- Initialise numbers 
+- iterate condition and statement
+- Add numbers
+- Display Sum
+
+Stage 2
+- Declare class
+- Declare main method
+- Initialise sum to 0
+- Initialise counter to 1
+- Prompt user to enter first numbers (possibly the sentinel to continue or terminate)
+- Input the number
+- While the user has not entered the sentinel
+- Add number to sum
+- Add one to counter
+- Prompt user to enter the next number (possibly the sentinel to continue or terminate)
+- input the next number
+- Add number to sum
+- Add one to counter 
+- If sum is not equal to zero, display sum
+else display 'no numbers were entered'.
