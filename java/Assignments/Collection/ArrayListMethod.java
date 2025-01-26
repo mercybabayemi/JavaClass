@@ -3,7 +3,7 @@ package Assignments.Collection;
 import java.util.InputMismatchException;
 
 public class ArrayListMethod {
-    private int capacity = 3;
+    private final int capacity = 3;
     private String[] array = new String[capacity];
     private int size = 0;
 
@@ -16,6 +16,7 @@ public class ArrayListMethod {
     }
 
     public void add(String firstExample) {
+        if (firstExample == null) throw new NullPointerException("Argument cannot be null");
         if(isFull()) increaseCapacity();
         this.array[size++] = firstExample;
     }
@@ -32,6 +33,8 @@ public class ArrayListMethod {
     }
 
     public void add(int index, String secondExample) {
+        if (secondExample == null) throw new NullPointerException("Argument cannot be null");
+        if(index < 0 || index > size - 1) throw new IndexOutOfBoundsException("Index must be between 0 and " + (size - 1));
         if(isFull()) increaseCapacity();
         size++;
         for(int i = size - 1; i > index; i--) {
@@ -43,27 +46,23 @@ public class ArrayListMethod {
     public void remove(String thirdElement){
         int expectedIndex = -1;
 
-        for(int index = 0; index < size ; index++) {
-            if (thirdElement.equals(array[index])) expectedIndex = index;
-        }
+        for(int index = 0; index < size ; index++) if (thirdElement.equals(array[index])) expectedIndex = index;
 
-        if(expectedIndex == -1){
-            throw new InputMismatchException("Element not found!");
-        }
+        if(expectedIndex == -1) throw new InputMismatchException("Element not found!");
 
-        for(int index = expectedIndex ; index < size - 1 ; index++){
-            array[index] = array[index + 1];
-        }
+        for(int index = expectedIndex ; index < size - 1 ; index++) array[index] = array[index + 1];
 
         size--;
     }
 
     public String get(int index) {
+        if(index < 0 || index > size - 1) throw new IndexOutOfBoundsException("Index must be between 0 and " + (size - 1));
         return array[index];
     }
 
     public void set(int index, String setExample) {
-        array[index] = setExample;
+        if(index < 0 || index > size - 1) throw new IndexOutOfBoundsException("Index must be between 0 and " + (size - 1));
+        if(index > 0 && index <= size - 1) array[index] = setExample;
     }
 
     public boolean contains(String secondExample) {

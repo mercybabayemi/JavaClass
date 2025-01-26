@@ -1,5 +1,7 @@
 package Assignments.Collection;
 
+import java.util.InputMismatchException;
+
 public class SetMethod {
     private ArrayListMethod list = new ArrayListMethod();
 
@@ -10,6 +12,7 @@ public class SetMethod {
     public void add(String firstExample) {
         if (list.isEmpty()) list.add(firstExample);
         else if (!contains(firstExample)) list.add(firstExample);
+        else if (contains(firstExample)) throw new InputMismatchException("Duplicate entry");
     }
 
     public int size() {

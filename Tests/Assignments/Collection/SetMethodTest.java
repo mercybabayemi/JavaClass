@@ -21,14 +21,14 @@ public class SetMethodTest {
     }
 
     @Test
-    public void testThat_setAddXToSet() {
+    public void testThat_setAddXYToSet() {
         set.add("firstExample");
         set.add("secondExample");
         assertEquals(2,set.size());
     }
 
     @Test
-    public void testThat_setAddXToSetWhenEmpty() {
+    public void testThat_setAddXYToSetWhenEmpty() {
         assertTrue(set.isEmpty());
         set.add("firstExample");
         set.add("secondExample");
@@ -37,13 +37,27 @@ public class SetMethodTest {
     }
 
     @Test
-    public void testThat_setAddNoDuplicates() {
+    public void testThat_setThrowsExceptionWhenDuplicatesAreFound() {
         set.add("firstExample");
         set.add("secondExample");
         set.add("thirdExample");
         set.add("fourthExample");
+        assertThrows(InputMismatchException.class, () -> set.add("firstExample"));
+    }
+
+    @Test
+    public void testThat_setAddNoDuplicatesAndSizeisTheSame() {
         set.add("firstExample");
+        set.add("secondExample");
+        set.add("thirdExample");
+        set.add("fourthExample");
+        assertThrows(InputMismatchException.class, () -> set.add("firstExample"));
         assertEquals(4,set.size());
+    }
+
+    @Test
+    public void testThat_setAddDoesNotAddNull() {
+        assertThrows(NullPointerException.class, () -> set.add(null));
     }
 
     @Test
@@ -62,11 +76,19 @@ public class SetMethodTest {
     }
 
     @Test
+    public void testThat_setRemoveThrowsExceptionWhenElementDoesNotExist() {
+        set.add("firstExample");
+        set.add("secondExample");
+        assertThrows(InputMismatchException.class, () -> set.remove("example"));
+    }
+
+    @Test
     public void testThat_setClears() {
         set.add("firstExample");
         set.add("secondExample");
         set.add("thirdExample");
         set.clear();
+        assertTrue(set.isEmpty());
         assertEquals(0,set.size());
     }
 
@@ -75,5 +97,13 @@ public class SetMethodTest {
         set.add("firstExample");
         set.add("secondExample");
         assertTrue(set.contains("firstExample"));
+    }
+
+    @Test
+    public void testThat_setDoesNotContainsX() {
+        set.add("firstExample");
+        set.add("secondExample");
+        assertFalse(set.contains("thirdExample"));
+
     }
 }

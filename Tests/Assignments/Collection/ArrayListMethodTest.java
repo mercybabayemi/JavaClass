@@ -36,6 +36,18 @@ public class ArrayListMethodTest {
     }
 
     @Test
+    public void testThat_listHandleNullExceptionInAddMethod() {
+        assertThrows(NullPointerException.class, () -> list.add(null));
+    }
+
+    @Test
+    public void testThat_listHandleNullExceptionInAddAtIndexMethod() {
+        list.add("firstExample");
+        list.add("secondExample");
+        assertThrows(NullPointerException.class, () -> list.add(1, null));
+    }
+
+    @Test
     public void testThat_listAddXAtIndex() {
         list.add("firstExample");
         list.add("secondExample");
@@ -46,6 +58,13 @@ public class ArrayListMethodTest {
         list.add(1, "replacementExample");
         assertEquals("replacementExample",list.get(1));
         assertEquals(5,list.size());
+    }
+
+    @Test
+    public void testThat_listAddAtIndexThrowsExceptionWhenIndexIsOutOfBound(){
+        list.add("firstExample");
+        list.add("secondExample");
+        assertThrows(IndexOutOfBoundsException.class, () -> list.add(2, "replacementExample"));
     }
 
     @Test
@@ -79,6 +98,19 @@ public class ArrayListMethodTest {
     }
 
     @Test
+    public void testThat_listGetMethodThrowsExceptionWhenListIsEmpty() {
+        list.isEmpty();
+        assertThrows(IndexOutOfBoundsException.class, () -> list.get(0));
+    }
+
+    @Test
+    public void testThat_listGetMethodThrowsExceptionWhenArguementDoesNotExist() {
+        list.add("firstExample");
+        list.add("secondExample");
+        assertThrows(IndexOutOfBoundsException.class, () -> list.get(2));
+    }
+
+    @Test
     public void testThat_listSetXAtIndex() {
         list.add("firstExample");
         list.add("secondExample");
@@ -86,8 +118,15 @@ public class ArrayListMethodTest {
         list.add("fourthExample");
         list.set(1,"setExample");
         assertEquals("setExample",list.get(1));
-        assertEquals(4 ,
-                list.size());
+        assertEquals(4 , list.size());
+    }
+
+    @Test
+    public void testThat_listSetXAtIndexThrowsExceptionWhenIndexIsOutOfBound() {
+        list.add("firstExample");
+        list.add("secondExample");
+        list.add("thirdExample");
+        assertThrows(IndexOutOfBoundsException.class, () -> list.set(3, "setExample"));
     }
 
     @Test
@@ -119,11 +158,17 @@ public class ArrayListMethodTest {
     }
 
     @Test
-    public void testThat_listRemoveMethodDisplaysErrorMessage() {
+    public void testThat_listRemoveMethodDisplaysErrorMessageWhenElementDoesNotExist() {
         list.add("firstExample");
         list.add("secondExample");
         list.add("thirdExample");
         assertThrows(InputMismatchException.class,()->list.remove("example"));
+    }
+
+    @Test
+    public void testThat_listRemoveMethodThrowsExceptionOnRemoveMethodEmptyList() {
+        assertTrue(list.isEmpty());
+        assertThrows(InputMismatchException.class,()-> list.remove("firstExample"));
     }
 
     @Test

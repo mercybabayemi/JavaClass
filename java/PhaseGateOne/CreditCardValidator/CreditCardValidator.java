@@ -24,7 +24,7 @@ public class CreditCardValidator {
 	public static void getCardType(Scanner input,String card){
 
 			if (card.charAt(0) == '4') {
-				System.out.println("Card is a Visacard.");
+				System.out.println ("Card is a Visacard.");
 			}
 			else if (card.charAt(0) == '5'){
 				System.out.println("Card is a MasterCard.");
