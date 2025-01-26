@@ -104,7 +104,7 @@ public class ArrayListMethodTest {
     }
 
     @Test
-    public void testThat_listGetMethodThrowsExceptionWhenArguementDoesNotExist() {
+    public void testThat_listGetMethodThrowsExceptionWhenArgumentDoesNotExist() {
         list.add("firstExample");
         list.add("secondExample");
         assertThrows(IndexOutOfBoundsException.class, () -> list.get(2));
