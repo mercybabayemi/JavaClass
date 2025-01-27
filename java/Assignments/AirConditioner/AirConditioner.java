@@ -5,6 +5,11 @@ public class AirConditioner {
         public boolean isOn;
         public int temperature ;
 
+        public AirConditioner() {
+            this.isOn = false;
+            this.temperature = 0;
+        }
+
         public boolean getIsOn() {
             return isOn;
         }

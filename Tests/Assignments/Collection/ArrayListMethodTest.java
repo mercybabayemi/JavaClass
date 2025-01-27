@@ -9,11 +9,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ArrayListMethodTest {
 
-    private ArrayListMethod list;
+    private ArrayListMethod<String> list;
 
     @BeforeEach
     public void setUp() {
-        list = new ArrayListMethod();
+        list = new ArrayListMethod<>();
     }
 
     @Test
@@ -201,7 +201,7 @@ public class ArrayListMethodTest {
     public void testThat_listGetReturnsCorrectValue() {
         list.add("firstExample");
         list.add("secondExample");
-        String actual = list.get(0);
+        Object actual = list.get(0);
         assertEquals("firstExample", actual);
     }
 

@@ -8,11 +8,11 @@ import java.util.InputMismatchException;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SetMethodTest {
-    private SetMethod set;
+    private SetMethod<String> set;
 
     @BeforeEach
     void setUp() {
-        set = new SetMethod();
+        set = new SetMethod<>();
     }
 
     @Test

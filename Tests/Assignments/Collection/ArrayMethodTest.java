@@ -9,11 +9,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ArrayMethodTest {
 
-    private ArrayMethod array;
+    private ArrayMethod<String> array;
 
     @BeforeEach
     public void setUp() {
-        array = new ArrayMethod();
+        array = new ArrayMethod<>();
     }
 
     @Test
@@ -193,7 +193,7 @@ public class ArrayMethodTest {
     public void testThat_arrayGetReturnsCorrectValue() {
         array.add("firstExample");
         array.add("secondExample");
-        String actual = array.get(0);
+        Object actual = array.get(0);
         assertEquals("firstExample", actual);
     }
 

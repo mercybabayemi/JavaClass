@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
     public class AirConditionerTest {
 
     @Test
-    public void testThatAc_isOnEqualsFalse() {
+    public void testThatAc_isOnEqualsFalse_whichMeanItIsOff() {
             AirConditioner ac = new AirConditioner();
             assertFalse(ac.getIsOn());
         }
