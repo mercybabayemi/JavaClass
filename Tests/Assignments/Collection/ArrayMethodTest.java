@@ -8,7 +8,7 @@ import java.util.InputMismatchException;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ArrayMethodTest {
-
+    private ArrayMethod<Integer> intArray;
     private ArrayMethod<String> array;
 
     @BeforeEach
@@ -161,6 +161,21 @@ public class ArrayMethodTest {
     public void testThat_arrayRemoveMethodThrowsExceptionOnRemoveMethodEmptyArray() {
         assertTrue(array.isEmpty());
         assertThrows(InputMismatchException.class,()-> array.remove("firstExample"));
+    }
+
+    @Test
+    public void testThat_arrayRemoveIndexMethodThrowsExceptionOnRemoveMethodWithIndex() {
+        assertTrue(array.isEmpty());
+        assertThrows(IndexOutOfBoundsException.class, ()-> array.remove(1));
+    }
+
+    @Test
+    public void testThat_arrayRemoveIndexMethodRemovesIndexWithInput() {
+        array.add("firstExample");
+        array.add("secondExample");
+        array.add("thirdExample");
+        array.remove(1);
+        assertEquals(2, array.size());
     }
 
     @Test

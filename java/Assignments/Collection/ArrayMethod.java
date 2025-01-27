@@ -5,6 +5,7 @@ import java.util.InputMismatchException;
 public class ArrayMethod<E> {
     private final int capacity = 3;
     private final Object[] array = new Object[capacity];
+    public int length = capacity;
     private int size = 0;
 
     public int size() {
@@ -13,6 +14,10 @@ public class ArrayMethod<E> {
 
     public boolean isEmpty() {
         return size == 0;
+    }
+
+    public int length() {
+        return length;
     }
 
     public void add(E firstExample) {
@@ -41,11 +46,17 @@ public class ArrayMethod<E> {
     public void remove(E thirdElement){
         int expectedIndex = -1;
 
-        for(int index = 0; index < size ; index++) if (thirdElement.equals(array[index])) expectedIndex = index;
+        for(int index = 0; index < size ; index++) {
+            if (thirdElement.equals(array[index])) {
+                expectedIndex = index;
+            }
+        }
 
         if(expectedIndex == -1) throw new InputMismatchException("Element not found!");
 
         for(int index = expectedIndex ; index < size - 1 ; index++) array[index] = array[index + 1];
+
+        array[size - 1] = null;
 
         size--;
     }
@@ -70,5 +81,19 @@ public class ArrayMethod<E> {
 
     public void clear() {
         size = 0;
+    }
+
+    public void remove(int input ) {
+        int expectedIndex = -1;
+
+        for(int index = 0; index < size ; index++) if (input == index) expectedIndex = index;
+
+        if(expectedIndex == -1) throw new IndexOutOfBoundsException("Element not found!");
+
+        for(int index = expectedIndex ; index < size - 1 ; index++) array[index] = array[index + 1];
+
+        array[size - 1] = null;
+
+        size--;
     }
 }
