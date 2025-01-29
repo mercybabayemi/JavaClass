@@ -1,5 +1,0 @@
-Pseudocode tabular output
-Stage 1
-- Display header N,N^2,N^3, N^4 using Unicode superscript \u00B2, \u00B3, \u2074
-- Iterate between number 1 to 5
-- The first number is N multiply number twice, multiply number thrice and multiply number four times for each section.

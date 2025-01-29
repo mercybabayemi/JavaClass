@@ -1,3 +1,0 @@
-Pseudocode Validating user input
-- Prompt user to enter a number
-- iterate over number if not 1 or 2

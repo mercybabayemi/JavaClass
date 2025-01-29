@@ -1,8 +1,0 @@
-Pseudocode of squares 
-
-Initialize number to 1
-while number is less than or equal to 5
-multiply number times number
-collect and save result as square
-increament number
-display result

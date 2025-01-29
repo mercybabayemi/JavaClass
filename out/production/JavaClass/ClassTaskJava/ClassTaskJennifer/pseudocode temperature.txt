@@ -1,7 +1,0 @@
-pseudocode temperature celsius
-prompt user to enter temperature in Celsius 
--determine the temperature range
--display result 
-cold for below 10 *c
-warm for 20 -25*c 
-hot for above 25*c

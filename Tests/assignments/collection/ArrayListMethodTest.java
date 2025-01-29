@@ -1,4 +1,4 @@
-package Assignments.Collection;
+package assignments.collection;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -212,6 +212,39 @@ public class ArrayListMethodTest {
         list.add("thirdExample");
         list.set(1,"setExample");
         assertEquals("setExample",list.get(1));
+    }
+
+    @Test
+    public void testThat_listRemovesAllElements() {
+        list.add("firstExample");
+        list.add("secondExample");
+        list.add("thirdExample");
+        list.removeAll();
+        assertEquals(0, list.size());
+    }
+
+    @Test
+    public void testThat_arrayRemoveIndexMethodThrowsExceptionOnRemoveMethodWithIndex() {
+        assertTrue(list.isEmpty());
+        assertThrows(IndexOutOfBoundsException.class, ()-> list.remove(1));
+    }
+
+    @Test
+    public void testThat_arrayRemoveIndexMethodRemovesIndexWithInput() {
+        list.add("firstExample");
+        list.add("secondExample");
+        list.add("thirdExample");
+        list.remove(1);
+        assertEquals(2, list.size());
+    }
+
+    @Test
+    public void testThat_arrayRemoveAllMethodRemoveAllInput() {
+        list.add("firstExample");
+        list.add("secondExample");
+        list.add("thirdExample");
+        list.removeAll();
+        assertEquals(0, list.size());
     }
 
 }

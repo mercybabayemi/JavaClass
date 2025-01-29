@@ -1,4 +1,0 @@
-pseudocode award rank
-prompt user to enter a rank between 1-4
-use a switch statement to print the award associated to each rank
-display result

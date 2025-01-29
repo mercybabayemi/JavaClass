@@ -1,6 +1,0 @@
-Pseudocode reverse array
-Initialise array values 
-collect and store as numbers
-select array at each index
-while at -1 ,print array element
-display result 

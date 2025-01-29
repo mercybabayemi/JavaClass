@@ -1,4 +1,4 @@
-package Assignments.Collection;
+package assignments.collection;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -221,5 +221,11 @@ public class ArrayMethodTest {
         assertEquals("setExample",array.get(1));
     }
 
+    @Test
+    public void testThat_arrayReturnCorrectLength() {
+        array.add("firstExample");
+        array.add("secondExample");
+        assertEquals(2, array.size());
+    }
 }
 

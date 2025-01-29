@@ -1,6 +1,0 @@
-Pseudocode to print pattern
-Initialize number
-outer loop is in range 0f 3 from 0
-inner loop is in range 1 to 3
-add 1 to number at each point.
-print number

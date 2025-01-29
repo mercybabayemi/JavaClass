@@ -1,8 +1,0 @@
-Pseudo code annual income
-prompt user to enter their annual income
-determine their tax bracket
-display result 
-0-$9,875:10%
-$9,876 - $40,125:12%
-$40,126 - $85,525:22%
-$85,526 and above: 24% 

@@ -1,8 +1,0 @@
-Pseudocode compute area of a polygon
-- prompt user to enter number of sides
-- collect and store as 'number'
-- prompt user to enter length of a side
-- collect and store as 'length'
-- calculate 'area' of the polygon with :
-	(number*length^2)/ (4*tan(3.142/n))
-- Display "The area of the polygon is {area}"

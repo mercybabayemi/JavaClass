@@ -1,3 +1,0 @@
-pseudo code
-sum numbers
-print result
