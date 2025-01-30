@@ -56,7 +56,7 @@ public class ArrayListMethod<E> {
     }
 
     public Object get(int index) {
-        if(index < 0 || index > size - 1) throw new IndexOutOfBoundsException("Index must be between 0 and " + (size - 1));
+        if(index < 0 || index > size ) throw new IndexOutOfBoundsException("Index must be between 0 and " + (size - 1));
         return array[index];
     }
 

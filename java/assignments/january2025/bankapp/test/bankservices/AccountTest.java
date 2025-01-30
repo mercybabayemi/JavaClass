@@ -36,6 +36,11 @@ public class AccountTest {
     }
 
     @Test
+    public void testThat_countDeposits_throwsException() {
+        assertThrows(InputMismatchException.class, () -> account.deposit(-500));
+    }
+
+    @Test
     public void testThat_accountWithdraws_successfullyWhenAmountIsGreaterThanZeroAndLessThanBalance() {
         account.deposit(5000);
         account.deposit(5000);

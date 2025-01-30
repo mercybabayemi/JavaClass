@@ -59,6 +59,12 @@ public class BankTest {
     }
 
     @Test
+    public void testThat_bankFindsAccountByAccountNumber_throwsException_whenBankAccountNotFound() {
+        int account1 = bank.createAccount( "Mercy", "Janet", "1234");
+        assertThrows( IllegalArgumentException.class, () -> bank.findAccountByAccountNumber(2));
+    }
+
+    @Test
     public void testThat_bankDepositsIntoAccount() {
         int account1 = bank.createAccount( "Mercy", "Janet", "1234");
         int account1AccountNumber = bank.findAccountByAccountNumber(account1).getAccountNumber();
@@ -72,6 +78,11 @@ public class BankTest {
         int account1 = bank.createAccount( "Mercy", "Janet", "1234");
         int account1AccountNumber = bank.findAccountByAccountNumber(account1).getAccountNumber();
         assertThrows(InputMismatchException.class, () -> bank.checkBalance(account1AccountNumber, "4321"));
+    }
+
+    @Test
+    public void testThat_bankDeposit_throwsException_whenAccountDoesNotExist() {
+        assertThrows( IllegalArgumentException.class, () -> bank.findAccountByAccountNumber(1));
     }
 
     @Test

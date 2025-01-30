@@ -45,6 +45,7 @@ public class Bank {
     }
 
     public Account findAccountByAccountNumber(int accountNumber) {
+        if (accountNumber < 0 || accountNumber > accountCount) throw new IllegalArgumentException("Account number does not exist");
         return (Account) accounts.get(accountNumber - 1);
     }
 
@@ -53,6 +54,7 @@ public class Bank {
     }
 
     public void deposit(int accountNumber, int amount) {
+        if (accountNumber < 0 || accountNumber > accountCount) throw new IllegalArgumentException("Account number does not exist");
         findAccountByAccountNumber(accountNumber).deposit(amount);
     }
 

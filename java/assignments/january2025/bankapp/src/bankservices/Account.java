@@ -30,6 +30,7 @@ public class Account {
     }
 
     public void deposit(int amount) {
+        if(amount < 0) throw new InputMismatchException("Amount must be a positive number");
         this.balance += amount;
     }
 
@@ -39,7 +40,7 @@ public class Account {
     }
 
     public void withdraw(int amount, String pinInput) {
-        if (amount > this.balance || amount < 0) throw new IllegalStateException("Amount must be greater than zero and less than balance.");
+        if (amount > this.balance || amount < 0) throw new IllegalStateException("Amount must be greater than zero and less than or equal to balance.");
         else if(pinInput.equals(pin)) this.balance -= amount;
         else if(!pinInput.equals(pin)) throw new InputMismatchException("PIN does not match.");
     }

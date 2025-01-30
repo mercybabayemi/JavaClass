@@ -37,18 +37,18 @@ public class Main {
             case 2:
                 depositMoney(input);
                 break;
-//            case 3:
-//                withdrawMoney();
-//                break;
-//            case 4:
-//                transferMoney();
-//                break;
-//            case 5:
-//                checkBalance();
-//                break;
-//            case 6:
-//                exit();
-//                break;
+            case 3:
+                withdrawMoney(input);
+                break;
+            case 4:
+                transferMoney(input);
+                break;
+            case 5:
+                checkBalance(input);
+                break;
+            case 6:
+                exit();
+                break;
             default:
                 System.out.println("Invalid response");
                 mainMenu(input);
@@ -56,14 +56,105 @@ public class Main {
         }
     }
 
+    private static void exit() {
+        System.out.println("Goodbye!");
+    }
+
+    public static void checkBalance(Scanner input) {
+        try {
+            System.out.println("Enter account number: ");
+            int accountNumber = validateIntInput(input);
+
+            System.out.print("Enter your pin: ");
+            String pin = validateStringInput(input);
+
+            int balance = semicolonBank.checkBalance(accountNumber, pin);
+            System.out.println("Your balance is: " + balance);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        } catch (InputMismatchException e) {
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println("An unexpected error occured: " + e.getMessage());
+        }
+        mainMenu(input);
+    }
+
+    private static void transferMoney(Scanner input) {
+        try {
+            System.out.println("Enter  sender's account number: ");
+            int senderAccount = validateIntInput(input);
+
+            System.out.println("Enter  receiver's account number: ");
+            int receiverAccount = validateIntInput(input);
+
+            System.out.println("Enter amount to withdraw: ");
+            int amount = validateIntInput(input);
+
+            System.out.print("Enter your pin: ");
+            String pin = validateStringInput(input);
+
+            semicolonBank.transfer(senderAccount, receiverAccount, amount, pin);
+            System.out.println("Amount has been withdrawn successfully.");
+
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        } catch (InputMismatchException e) {
+            System.out.println(e.getMessage());
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println("An unexpected error occured: " + e.getMessage());
+        }
+
+        mainMenu(input);
+    }
+
+    private static void withdrawMoney(Scanner input) {
+        try{
+            System.out.println("Enter account number: ");
+            int accountNumber = validateIntInput(input);
+
+            System.out.println("Enter amount to withdraw: ");
+            int amount = validateIntInput(input);
+
+            System.out.print("Enter your pin: ");
+            String pin = validateStringInput(input);
+
+            semicolonBank.withdraw(accountNumber, amount, pin);
+            System.out.println("Amount has been withdrawn successfully.");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
+        } catch (InputMismatchException e) {
+            System.out.println(e.getMessage());
+        }catch (Exception e) {
+            System.out.println("An unexpected error occured: " + e.getMessage());
+        }
+
+        mainMenu(input);
+    }
+
     private static void depositMoney(Scanner input) {
-        System.out.println("Enter account number: ");
-        int accountNumber = validateIntInput(input);
 
-        System.out.println("Enter amount to deposit: ");
-        int amount = validateIntInput(input);
+        try {
+            System.out.println("Enter account number: ");
+            int accountNumber = validateIntInput(input);
 
-        semicolonBank.deposit(accountNumber, amount);
+            System.out.println("Enter amount to deposit: ");
+            int amount = validateIntInput(input);
+
+            semicolonBank.deposit(accountNumber, amount);
+            System.out.println("Deposit successful!!");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. Please enter a valid number.");
+        } catch (Exception e) {
+            System.out.println("An unexpected error occured: " + e.getMessage());
+        }
+
         mainMenu(input);
     }
 
@@ -77,8 +168,10 @@ public class Main {
         System.out.print("Enter your pin: ");
         String pin = validateStringInput(input);
 
-        semicolonBank.createAccount(firstName, lastName, pin);
+        int accountNumber = semicolonBank.createAccount(firstName, lastName, pin);
         System.out.println("Account created successfully!!!");
+
+        System.out.printf("Your account number is %d%n", accountNumber);
         mainMenu(input);
     }
 
@@ -88,11 +181,12 @@ public class Main {
 
         while(!validInput){
             try {
-                response = input.nextInt();
+                String userInput = input.nextLine().trim();
+                if (userInput.isEmpty()) System.out.println("Input cannot be empty. Please enter a valid integer.");
+                response = Integer.parseInt(userInput);
                 validInput = true;
-            } catch (InputMismatchException e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Invalid input. Please enter an integer.");
-            } finally {
                 input.nextLine();
             }
         }
@@ -105,11 +199,12 @@ public class Main {
 
         while (!validInput) {
             try {
-                response = input.nextLine();
-                if (response.trim().isEmpty()) throw new IllegalArgumentException("Input cannot be empty.");
+                response = input.nextLine().trim();
+                if (response.isEmpty()) throw new IllegalArgumentException("Input cannot be empty.");
+                if (response.contains(" ")) throw new IllegalArgumentException("Input cannot contain consecutive spaces.");
                 validInput = true;
             } catch (IllegalArgumentException e) {
-                System.out.println("Invalid input. Please enter a non-empty string.");
+                System.out.println(e.getMessage());
             }
         }
         return response;
