@@ -1,10 +1,12 @@
+package makingadifference;
+
 import java.security.SecureRandom;
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
 public class MonitoringStudentPerformanceExercise6_37 {
+    public static ComputerInstructionExercise6_35 computer;
     public static void main(String[] args) {
         SecureRandom random = new SecureRandom();
         Scanner input = new Scanner(System.in);
@@ -21,7 +23,7 @@ public class MonitoringStudentPerformanceExercise6_37 {
         int totalCount = 10;
 
         while (positiveCount + negativeCount != totalCount) {
-            int correctAnswer =  generateComputerInstruction(random);
+            int correctAnswer =  computer.generateComputerInstruction(random);
             int isCorrect = confirmAnswer(correctAnswer, input);
             negativeCount += (isCorrect > 1 ? isCorrect - 1 : 0);
             positiveCount += (isCorrect >= 1 ? 1 : 0);
@@ -44,45 +46,16 @@ public class MonitoringStudentPerformanceExercise6_37 {
         String[] negativeResponses = {"No. Please try again.", "Wrong. Try once more", "Don't give up!", "No. Keep trying."};
         Random random = new Random();
 
-        int response = validateIntInput(input);
+        int response = computer.validateIntInput(input);
         int negative = 0;
 
         while (correctAnswer != response) {
             System.out.println(negativeResponses[random.nextInt(negativeResponses.length)]);
-            response = validateIntInput(input);
+            response = computer.validateIntInput(input);
             negative ++;
         }
         System.out.println(positiveResponses[random.nextInt(positiveResponses.length)]);
         return negative + 1;
     }
 
-    public static int generateComputerInstruction(SecureRandom random) {
-        int secureRandomInt1 = random.nextInt(10);
-        int secureRandomInt2 = random.nextInt(10);
-
-        System.out.printf("How much is %d times %d%n", secureRandomInt1, secureRandomInt2);
-
-        int correctAnswer = secureRandomInt1 * secureRandomInt2;
-        return correctAnswer;
-    }
-
-    public static int validateIntInput(Scanner input) {
-        boolean validInput = false;
-        int response = 0;
-
-        while (!validInput) {
-            System.out.println("Please enter a number: ");
-            try{
-                String userInput = input.nextLine().trim();
-                if (userInput.isEmpty()) System.out.println("Input cannot be empty");
-                response = Integer.parseInt(userInput);
-                validInput = true;
-            }catch (InputMismatchException e){
-                System.out.println("Invalid input. Please enter an integer.");
-                input.nextLine();
-            }
-        }
-        return response;
-
-    }
 }

@@ -1,3 +1,5 @@
+package makingadifference;
+
 import java.security.SecureRandom;
 import java.util.InputMismatchException;
 import java.util.Scanner;
