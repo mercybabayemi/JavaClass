@@ -61,6 +61,5 @@ public class ComputerInstructionExercise6_35 {
             }
         }
         return response;
-
     }
 }
