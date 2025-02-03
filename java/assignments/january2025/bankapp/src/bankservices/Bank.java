@@ -2,6 +2,8 @@ package bankservices;
 
 import custom_datastructure.ArrayListMethod;
 
+import java.util.InputMismatchException;
+
 public class Bank {
     private ArrayListMethod<Account> accounts;
     private int accountCount;
@@ -63,6 +65,7 @@ public class Bank {
     }
 
     public void transfer(int senderAccount, int receiverAccount, int amount, String pin) {
+        if(senderAccount == receiverAccount) throw new InputMismatchException("Cannot transfer from the same account");
         findAccountByAccountNumber(senderAccount).withdraw(amount, pin);
         findAccountByAccountNumber(receiverAccount).deposit(amount);
     }

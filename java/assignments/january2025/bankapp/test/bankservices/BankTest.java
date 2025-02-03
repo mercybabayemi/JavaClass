@@ -130,4 +130,10 @@ public class BankTest {
         assertEquals(7_000, bank.checkBalance(account2AccountNumber, "3245") );
     }
 
+    @Test
+    public void testThat_withdrawMethodThrowsExceptionWhenUserSendsFromAccountXToAccountX() {
+        int account1 = bank.createAccount( "Mercy", "Janet", "1234");
+        assertThrows(InputMismatchException.class, () -> bank.transfer(1,1,2_000, "1234"));
+    }
+
 }
