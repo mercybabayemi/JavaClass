@@ -69,6 +69,6 @@ public class Diary {
 
     @Override
     public String toString() {
-        return "Diary [Username: " + this.username + ", Entries: " + this.entries.size() + "]";
+        return "Diary: /nUsername: " + this.username + ", Entries: " + this.entries.size() ;
     }
 }

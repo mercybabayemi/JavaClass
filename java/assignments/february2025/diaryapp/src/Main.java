@@ -135,11 +135,12 @@ public class Main {
         System.out.println("""
                 ---- Diary Menu ----
                 1. Create New Entry
-                2. View Entries
-                3. Update Entry
-                4. Delete Entry
-                5. Lock Diary
-                6. Logout
+                2. View Entry
+                3. View Entries
+                4. Update Entry
+                5. Delete Entry
+                6. Lock Diary
+                7. Logout
                 Enter your choice:
                 """
         );
@@ -152,18 +153,21 @@ public class Main {
                 createEntry();
                 break;
             case 2:
-                viewEntries();
+                viewEntry();
                 break;
             case 3:
-                updateEntries();
+                viewEntries();
                 break;
             case 4:
-                deleteEntry();
+                updateEntries();
                 break;
             case 5:
-                lockEntry();
+                deleteEntry();
                 break;
             case 6:
+                lockEntry();
+                break;
+            case 7:
                 System.out.println("Logging out>>>>");
                 return;
             default:
@@ -217,6 +221,26 @@ public class Main {
             System.out.println("Diary is empty.");
         }catch (IndexOutOfBoundsException e){
             System.out.println("Invalid entry ID.");
+        }
+        diaryEntryMenu(diary);
+    }
+
+    private void viewEntry() {
+        System.out.print("Enter entry ID to view: ");
+        int entryIdToFind = validateIntInput(input);
+
+        System.out.println("-----Entry-----");
+        Entry entry = null;
+        try {
+            for (int i = 1; i <= diary.size(); i++) {
+                entry = diary.findEntryById(i);
+                if(entryIdToFind == entry.getId()) System.out.println(entry);
+            }
+            if (entry == null) throw new NoSuchElementException("No such entry.");
+        }catch (NoSuchElementException e){
+            System.out.println(e.getMessage());
+        }catch (NullPointerException e){
+            System.out.println("Diary is empty");
         }
         diaryEntryMenu(diary);
     }

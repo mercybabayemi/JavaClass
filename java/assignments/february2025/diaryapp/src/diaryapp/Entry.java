@@ -36,11 +36,6 @@ public class Entry {
 
     @Override
     public String toString() {
-        return """
-                ID:  " + this.id +
-                "Title: " + this.title + "
-                "Body: " + this.body + "
-                "DateCreated: " + this.dateCreated
-                """;
+        return String.format("Entry: %nID: %d,%nTitle: %s,%nBody: %s,%nDateCreated: %s", this.id, this.title, this.body, this.dateCreated);
     }
 }
