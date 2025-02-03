@@ -9,7 +9,6 @@ public class Main {
     private Scanner input = new Scanner(System.in);
     private Diaries diaries;
     private Diary diary;
-    private Entry entry;
 
     public Main() {
         diaries = new Diaries();
@@ -32,7 +31,8 @@ public class Main {
                 1. Create a new diary
                 2. Login to existing diary
                 3. Show all diaries
-                4. Exit
+                4. Delete diary from diaries
+                5. Exit
                 Enter your choice:
                 """);
     }
@@ -51,6 +51,8 @@ public class Main {
                 showAllDiaries();
                 break;
             case 4:
+                deleteDiaries();
+            case 5:
                 exit();
                 break;
             default:
@@ -58,6 +60,21 @@ public class Main {
                 mainMenu();
         }
 
+    }
+
+    private void deleteDiaries() {
+        System.out.println("Enter username: ");
+        String username = validateStringInput(input);
+
+        System.out.println("Enter password: ");
+        String password = validateStringInput(input);
+        try {
+            diaries.delete(username, password);
+            System.out.println("Entry deleted.");
+        }catch(NoSuchElementException e){
+            System.out.println(e.getMessage());
+        }
+        mainMenu();
     }
 
     public void showAllDiaries() {
@@ -74,8 +91,10 @@ public class Main {
     public void createDiary(){
         System.out.println("Enter username: ");
         String username = validateStringInput(input);
+
         System.out.println("Enter password: ");
         String password = validateStringInput(input);
+
         diaries.add(username, password);
         System.out.println("Diary created successfully!");
         mainMenu();
