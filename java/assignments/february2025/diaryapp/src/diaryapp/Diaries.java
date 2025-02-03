@@ -37,4 +37,8 @@ public class Diaries {
     public ArrayList<Diary> getAllDiaries() {
         return diaries;
     }
+
+    public int size() {
+        return diaries.size();
+    }
 }
