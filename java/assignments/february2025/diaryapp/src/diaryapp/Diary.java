@@ -1,6 +1,7 @@
 package diaryapp;
 
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 public class Diary {
     private final String username;
@@ -65,6 +66,17 @@ public class Diary {
 
     public String getPassword() {
         return this.password;
+    }
+
+    public void viewEntry(int id) {
+        Entry entry = null;
+        for(int i = 1; i <= size(); i++) {
+            if (i == id) {
+                entry = entries.get(i - 1);
+            }
+        }
+        if (entry == null) throw new NoSuchElementException("No such entry.");
+        else System.out.println(entry);
     }
 
     @Override

@@ -230,13 +230,8 @@ public class Main {
         int entryIdToFind = validateIntInput(input);
 
         System.out.println("-----Entry-----");
-        Entry entry = null;
         try {
-            for (int i = 1; i <= diary.size(); i++) {
-                entry = diary.findEntryById(i);
-                if(entryIdToFind == entry.getId()) System.out.println(entry);
-            }
-            if (entry == null) throw new NoSuchElementException("No such entry.");
+            diary.viewEntry(entryIdToFind);
         }catch (NoSuchElementException e){
             System.out.println(e.getMessage());
         }catch (NullPointerException e){
@@ -252,8 +247,6 @@ public class Main {
                 Entry entry = diary.findEntryById(i);
                 System.out.println(entry);
             }
-        }catch (NoSuchElementException e){
-            System.out.println(e.getMessage());
         }catch (NullPointerException e){
             System.out.println("Diary is empty");
         }
