@@ -1,4 +1,11 @@
-package PACKAGE_NAME;
+public class StackMethod <E>{
+    private ArrayListMethod<E> arrayList;
 
-public class StackMethod {
+    public int size(){
+        return arrayList.size();
+    }
+
+    public boolean isEmpty() {
+        return false;
+    }
 }
