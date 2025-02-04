@@ -18,10 +18,10 @@ public class DistanceBetweenTwoPoints{
 		int pointTwoY = input.nextInt();
 
 		if(pointOneX == pointTwoX){
-			System.out.println("The points x are on a line parallel to the x-axis and perpendicular to Y-axis.");
+			System.out.println(""The points are on a line parallel to the Y-axis and perpendicular to the X-axis.");
 		}
 		else if(pointOneY == pointTwoY){
-			System.out.println("The points y are on a line parallel to the Y-axis and perpendicular to X-axis.");
+			System.out.println("The points are on a line parallel to the X-axis and perpendicular to the Y-axis.");
 		}
 		else{
 			System.out.print("Line is not perpendicular to axis.");
