@@ -167,12 +167,31 @@ public class Main {
             case 6:
                 lockEntry();
                 break;
-            case 7:
-                System.out.println("Logging out>>>>");
-                return;
             default:
                 System.out.println("Invalid choice. Please try again.");
                 diaryChoice();
+        }
+    }
+
+    private void validateLockAndUnlockDiary() {
+        while(diary.isLocked() == true){
+            System.out.println("Unlock diary to continue.");
+            unlockEntry();
+        }
+    }
+
+    private void unlockEntry() {
+        System.out.println("Enter password: ");
+        String password = validateStringInput(input);
+        try {
+            diary.unlockDiary(password);
+            System.out.println("Diary is unlocked.");
+        }catch (NoSuchElementException e) {
+            System.out.println(e.getMessage());
+        } catch (NullPointerException e) {
+            System.out.println("Diary is empty.");
+        } catch (SecurityException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -189,6 +208,7 @@ public class Main {
     }
 
     private void deleteEntry() {
+        validateLockAndUnlockDiary();
         System.out.print("Enter entry ID to delete: ");
         int deleteId = validateIntInput(input);
         try {
@@ -205,15 +225,16 @@ public class Main {
     }
 
     private void updateEntries() {
+        validateLockAndUnlockDiary();
         try {
             System.out.print("Enter entry ID to update: ");
             int updateId = validateIntInput(input);
 
             System.out.print("Enter new title: ");
-            String newTitle = input.nextLine();
+            String newTitle = validateStringInput(input);
 
             System.out.print("Enter new body: ");
-            String newBody = input.nextLine();
+            String newBody = validateStringInput(input);
             diary.updateEntry(updateId, newTitle, newBody);
 
             System.out.println("Entry updated.");
@@ -226,6 +247,7 @@ public class Main {
     }
 
     private void viewEntry() {
+        validateLockAndUnlockDiary();
         System.out.print("Enter entry ID to view: ");
         int entryIdToFind = validateIntInput(input);
 
@@ -241,23 +263,27 @@ public class Main {
     }
 
     private void viewEntries() {
+        validateLockAndUnlockDiary();
         System.out.println("-----Entries-----");
         try {
             for (int i = 1; i <= diary.size(); i++) {
                 Entry entry = diary.findEntryById(i);
                 System.out.println(entry);
             }
+            if (diary.size() == 0){
+                System.out.println("Diary is empty");
+            }
         }catch (NullPointerException e){
-            System.out.println("Diary is empty");
+            System.out.println(e.getMessage());
         }
         diaryEntryMenu(diary);
     }
 
     private void createEntry() {
         System.out.println("Enter title: ");
-        String title = input.nextLine();
+        String title = validateStringInput(input);
         System.out.println("Enter body: ");
-        String body = input.nextLine();
+        String body = validateStringInput(input);
         int entryId = diary.createEntry(title, body);
         System.out.println("Entry ID: " + entryId);
         System.out.println("Entry created successfully!");

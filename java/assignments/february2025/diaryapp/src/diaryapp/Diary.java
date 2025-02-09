@@ -19,7 +19,7 @@ public class Diary {
 
     public void unlockDiary(String password) {
         if(this.password.equals(password)) isLocked = false;
-      //  if(!this.password.equals(password)) isLocked = true;
+        else throw new SecurityException("Passwords do not match");
     }
 
     public boolean isLocked() {
