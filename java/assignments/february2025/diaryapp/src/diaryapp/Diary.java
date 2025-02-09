@@ -8,18 +8,18 @@ public class Diary {
     private final String password;
     private boolean isLocked;
     private final ArrayList<Entry> entries;
-    private int entryCount;
+    private int lastEntryId;
 
     public Diary(String username, String password) {
         this.username = username;
         this.password = password;
         this.entries = new ArrayList<>();
-        this.entryCount = 0;
+        this.lastEntryId = 0;
     }
 
     public void unlockDiary(String password) {
         if(this.password.equals(password)) isLocked = false;
-        if(!this.password.equals(password)) isLocked = true;
+      //  if(!this.password.equals(password)) isLocked = true;
     }
 
     public boolean isLocked() {
@@ -31,10 +31,15 @@ public class Diary {
     }
 
     public int createEntry(String title, String entryBody) {
-        ++this.entryCount;
-        Entry entry1 = new Entry(this.entryCount, title, entryBody);
-        entries.add(entry1);
-        return entry1.getId();
+      //  ++this.lastEntryId;
+        validateIfDairyIsLocked();
+        Entry newEntry = new Entry(++this.lastEntryId, title, entryBody);
+        entries.add(newEntry);
+        return newEntry.getId();
+    }
+
+    private void validateIfDairyIsLocked() {
+        if(isLocked()) throw new IllegalArgumentException("Diary is locked");
     }
 
     public int size() {
@@ -42,13 +47,15 @@ public class Diary {
     }
 
     public void deleteEntry(int id) {
+        validateIfDairyIsLocked();
         if (id <= 0 || id > entries.size()) throw new IndexOutOfBoundsException("Index " + id + " out of bounds for " + entries.size() );
         Entry entryToDelete = entries.get(id - 1);
         entries.remove(entryToDelete);
-        --entryCount;
+        --lastEntryId;
     }
 
     public Entry findEntryById(int id) {
+        validateIfDairyIsLocked();
         if (id <= 0 || id > entries.size()) throw new IndexOutOfBoundsException("Index " + id + " out of bounds for " + entries.size() );
         return entries.get(id - 1);
     }
@@ -69,18 +76,15 @@ public class Diary {
     }
 
     public void viewEntry(int id) {
+        validateIfDairyIsLocked();
         Entry entry = null;
-        for(int i = 1; i <= size(); i++) {
-            if (i == id) {
-                entry = entries.get(i - 1);
-            }
-        }
+        for(int i = 1; i <= size(); i++) if (i == id) entry = entries.get(i - 1);
         if (entry == null) throw new NoSuchElementException("No such entry.");
         else System.out.println(entry);
     }
 
     @Override
     public String toString() {
-        return "Diary: /nUsername: " + this.username + ", Entries: " + this.entries.size() ;
+        return "Diary:\nUsername: " + this.username + ", Entries: " + this.entries.size() ;
     }
 }
