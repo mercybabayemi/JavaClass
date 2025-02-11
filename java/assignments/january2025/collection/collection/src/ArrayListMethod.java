@@ -10,7 +10,8 @@ public class ArrayListMethod<E> {
     }
 
     public boolean isEmpty() {
-        return size == 0;
+        if (size == 0) return true;
+        return false;
     }
 
     public void add(E firstExample) {

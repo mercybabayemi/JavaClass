@@ -17,6 +17,25 @@ public class QueueMethodTest {
     }
 
     @Test
+    public void testThat_queueMethodAdd_whenNotFull() {
+        queue.add("firstElement");
+        assertFalse(queue.isEmpty());
+        assertEquals(1, queue.size());
+        queue.add("secondElement");
+        queue.add("thirdElement");
+        assertEquals(3, queue.size());
+    }
+
+    @Test
+    public void testThat_queueMethodAdd_ThrowsExceptions() {
+        assertThrows(NullPointerException.class, () -> queue.add(null));
+        queue.add("firstElement");
+        queue.add("secondElement");
+        queue.add("thirdElement");
+        assertThrows(IllegalStateException.class, () -> queue.add("fourthElement"));
+    }
+
+    @Test
     public void testThat_queueMethod_IsNotEmpty() {
         queue.offer("firstElement");
         assertFalse(queue.isEmpty());

@@ -11,7 +11,8 @@ public class ArrayMethod<E> {
     }
 
     public boolean isEmpty() {
-        return size == 0;
+        if(size == 0) return true;
+        return false;
     }
 
     public int length() {

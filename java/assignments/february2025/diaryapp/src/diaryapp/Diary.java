@@ -32,22 +32,22 @@ public class Diary {
 
     public int createEntry(String title, String entryBody) {
       //  ++this.lastEntryId;
-        validateIfDairyIsLocked();
+//        validateIfDairyIsLocked();
         Entry newEntry = new Entry(++this.lastEntryId, title, entryBody);
         entries.add(newEntry);
         return newEntry.getId();
     }
-
-    private void validateIfDairyIsLocked() {
-        if(isLocked()) throw new IllegalArgumentException("Diary is locked");
-    }
+//
+//    private void validateIfDairyIsLocked() {
+//        if(isLocked()) throw new IllegalArgumentException("Diary is locked");
+//    }
 
     public int size() {
         return entries.size();
     }
 
     public void deleteEntry(int id) {
-        validateIfDairyIsLocked();
+//        validateIfDairyIsLocked();
         if (id <= 0 || id > entries.size()) throw new IndexOutOfBoundsException("Index " + id + " out of bounds for " + entries.size() );
         Entry entryToDelete = entries.get(id - 1);
         entries.remove(entryToDelete);
@@ -55,7 +55,7 @@ public class Diary {
     }
 
     public Entry findEntryById(int id) {
-        validateIfDairyIsLocked();
+//        validateIfDairyIsLocked();
         if (id <= 0 || id > entries.size()) throw new IndexOutOfBoundsException("Index " + id + " out of bounds for " + entries.size() );
         return entries.get(id - 1);
     }
@@ -76,7 +76,7 @@ public class Diary {
     }
 
     public void viewEntry(int id) {
-        validateIfDairyIsLocked();
+//        validateIfDairyIsLocked();
         Entry entry = null;
         for(int i = 1; i <= size(); i++) if (i == id) entry = entries.get(i - 1);
         if (entry == null) throw new NoSuchElementException("No such entry.");

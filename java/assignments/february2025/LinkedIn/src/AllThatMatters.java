@@ -7,6 +7,7 @@ public class AllThatMatters {
         while (isAlive) {
             eat();
             code();
+            sleepForThreeToFourHours();
             isAlive = validateStatus();
         }
     }
@@ -26,6 +27,10 @@ public class AllThatMatters {
                 System.out.println("Invalid status. Please enter 'Alive' or 'Dead'.");
                 return validateStatus();  // Recurse if the input is invalid
         }
+    }
+
+    private static void sleepForThreeToFourHours() {
+        System.out.println("Sleeping");
     }
 
     private static String validateStringInput(Scanner input) {

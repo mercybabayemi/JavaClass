@@ -167,10 +167,16 @@ public class Main {
             case 6:
                 lockEntry();
                 break;
+            case 7:
+                logout();
             default:
                 System.out.println("Invalid choice. Please try again.");
                 diaryChoice();
         }
+    }
+
+    private void logout() {
+        System.out.println("logging out>>");
     }
 
     private void validateLockAndUnlockDiary() {
