@@ -1,20 +1,27 @@
 package diaryapp;
 
+import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
-public class Diary {
+public class Diary implements Serializable {
     private final String username;
     private final String password;
     private boolean isLocked;
     private final ArrayList<Entry> entries;
     private int lastEntryId;
+    private LocalDate lastEntryDate;
 
     public Diary(String username, String password) {
         this.username = username;
         this.password = password;
         this.entries = new ArrayList<>();
         this.lastEntryId = 0;
+    }
+
+    public LocalDate getLastEntry(){
+        return lastEntryDate;
     }
 
     public void unlockDiary(String password) {
@@ -35,6 +42,7 @@ public class Diary {
 //        validateIfDairyIsLocked();
         Entry newEntry = new Entry(++this.lastEntryId, title, entryBody);
         entries.add(newEntry);
+        lastEntryDate = newEntry.getDateCreated();
         return newEntry.getId();
     }
 //

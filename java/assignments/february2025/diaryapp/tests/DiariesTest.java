@@ -1,5 +1,5 @@
-package diaryapp;
-
+import diaryapp.Diaries;
+import diaryapp.Diary;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -46,5 +46,10 @@ public class DiariesTest {
     @Test
     public void testThat_diariesDeleteDiaryThrowsExceptionWhenNotFound(){
         assertThrows(NoSuchElementException.class , () -> diaries.delete("username", "password"));
+    }
+
+    @Test
+    public void testThat_diariesSendNotificationWhenNoNewEntries(){
+
     }
 }

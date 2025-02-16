@@ -1,9 +1,13 @@
 package diaryapp;
 
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.NoSuchElementException;
 
-public class Diaries {
+public class Diaries implements Serializable {
     private final ArrayList<Diary> diaries;
 
     public Diaries() {
@@ -40,5 +44,23 @@ public class Diaries {
 
     public int size() {
         return diaries.size();
+    }
+
+    public void checkForReminders(){
+        Calendar currentCalender = Calendar.getInstance();
+        for(Diary diary: diaries){
+            LocalDate lastEntryDate = diary.getLastEntry();
+
+            long diffInMilliSeconds = currentCalender.getTimeInMillis() - lastEntryDate.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();
+            long diffInDays = diffInMilliSeconds / (1000 * 60 * 60 * 24);
+            if(diffInDays >= 7) sendReminder(diary);
+        }
+    }
+
+    private void sendReminder(Diary diary) {
+        System.out.println("""
+                REMINDER:
+                You have not written a new entry in your diary since 
+                """ + diary.getLastEntry());
     }
 }

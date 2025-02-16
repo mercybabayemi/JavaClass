@@ -1,8 +1,9 @@
 package diaryapp;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Entry {
+public class Entry implements Serializable {
     private int id;
     private String title;
     private String body;
@@ -13,6 +14,10 @@ public class Entry {
         this.title = title;
         this.body = body;
         this.dateCreated = LocalDate.now();
+    }
+
+    public LocalDate getDateCreated(){
+        return dateCreated;
     }
 
     public int getId() {

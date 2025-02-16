@@ -94,4 +94,6 @@ public class DiaryTest {
         assertThrows(IndexOutOfBoundsException.class, () -> diary.updateEntry(-1, "newTitle", "newBody"));
         assertThrows(IndexOutOfBoundsException.class, () -> diary.updateEntry(5, "newTitle", "newBody"));
     }
+
+
 }
