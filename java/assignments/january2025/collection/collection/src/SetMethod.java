@@ -1,4 +1,5 @@
 import java.util.InputMismatchException;
+import java.util.Iterator;
 
 public class SetMethod <E>{
     private ArrayListMethod<E> list = new ArrayListMethod<>();
@@ -28,5 +29,21 @@ public class SetMethod <E>{
     public boolean contains(E firstExample) {
         if(list.contains(firstExample)) return true;
         return false;
+    }
+
+    public Iterator<E> iterator() {
+        return new Iterator<>() {
+            private int index = 0;
+
+            @Override
+            public boolean hasNext() {
+                return index < list.size();
+            }
+
+            @Override
+            public E next() {
+                return (E) list.get(index++);
+            }
+        };
     }
 }
