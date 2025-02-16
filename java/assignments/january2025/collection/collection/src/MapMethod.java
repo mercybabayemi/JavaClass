@@ -74,4 +74,9 @@ public class MapMethod <K,V>{
         }
         return valueToReturn;
     }
+
+    public void clear() {
+        keys.clear();
+        values.clear();
+    }
 }

@@ -57,6 +57,9 @@ public class MapMethodTest {
 
     @Test
     public void testThat_mapClearsAll(){
-
+        map.put("first", "I love neutrals");
+        map.put("second", "I love reading");
+        map.clear();
+        assertTrue(map.isEmpty());
     }
 }
