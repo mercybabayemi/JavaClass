@@ -72,6 +72,30 @@ public class GameTest {
     }
 
     @Test
+    public void testThat_playersMarkersAreEnteredInBoardAndThrowsExceptionWhenValueIsAlreadyAssignedToPosition() {
+        assertFalse(game.getIsPlayers());
+        game.collectUserPreferredSymbol('x');
+        game.setIsPlayers();
+        assertTrue(game.getIsPlayers());
+        game.collectUserPreferredSymbol('o');
+        game.setBoard(0, 0);
+        game.setIsPlayers();
+        assertThrows(IllegalArgumentException.class, () -> game.setBoard(0, 0));
+    }
+
+    @Test
+    public void testThat_playersMarkersAreEnteredInBoardAndThrowsExceptionWhenRowOrColumnOutOfBound() {
+        assertFalse(game.getIsPlayers());
+        game.collectUserPreferredSymbol('x');
+        game.setIsPlayers();
+        assertTrue(game.getIsPlayers());
+        game.collectUserPreferredSymbol('o');
+        game.setBoard(0, 0);
+        game.setIsPlayers();
+        assertThrows(IndexOutOfBoundsException.class, () -> game.setBoard(4, 0));
+    }
+
+    @Test
     public void testThat_playersMarkersAreEnteredInBoardAndDisplaysBinaryWhenCompleted(){
         assertFalse(game.getIsPlayers());
         game.collectUserPreferredSymbol('x');

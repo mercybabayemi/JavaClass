@@ -15,13 +15,14 @@ public class Game {
     }
 
     public void setBoard(int row, int column) {
-        if(getPlayer() == Players.PLAYER1){
-            char value = getPlayer1Marker();
-            board[row][column] = value;
-        }else if(getPlayer() == Players.PLAYER2){
-            char value = getPlayer2Marker();
-            board[row][column] = value;
-        }
+        if(!(0 <= row && row < boardCapacity && 0 <= column && column < boardCapacity)) throw new IndexOutOfBoundsException("Row and column must be within the bounds of the board.");
+
+        char value = 0;
+        if(getPlayer() == Players.PLAYER1)value = getPlayer1Marker();
+        else if(getPlayer() == Players.PLAYER2) value = getPlayer2Marker();
+
+        if(board[row][column] == '\u0000') board[row][column] = value;
+        else throw new IllegalArgumentException(String.format("Cell at (%d,%d) is  already occupied", row, column));
     }
 
     public char[][] getCharacterBoard() {

@@ -3,66 +3,143 @@ import java.util.Scanner;
 public class CaesarCipher {
 
     public static void main(String[] args) {
+        mainMenu();
+    }
+
+    public static void mainMenu() {
         Scanner input = new Scanner(System.in);
-
-        System.out.print("1. Encryption\n2. Decryption\nChoose either (1 or 2): ");
-        int choice = input.nextInt();
-
-        System.out.println("Message can only be lower or upper case");
-        System.out.print("Enter Message: ");
-        String message = input.nextLine();
-
-        System.out.print("Enter key (0-25): ");
-        int shift = input.nextInt();
-
-        if (choice == 1) {
-            String encryptedMessage = encryptMessage(message, shift);
-            System.out.println("Encrypted Message: " + encryptedMessage);
-        } else if (choice == 2) {
-            String decryptedMessage = decryptMessage(message, shift);
-            System.out.println("Decrypted Message: " + decryptedMessage);
-        } else {
-            System.out.println("Please choose 1 for encryption or 2 for decryption.");
+        boolean validation = false;
+        while(!validation){
+            System.out.print("""
+                    Choose either (1 or 2):
+                    1. Encryption
+                    2. Decryption
+                    """);
+            int choice = validateIntInput(input);
+            userChoice(choice, input);
+            validation = continuationDeterminer(input);
         }
     }
 
-    public static String encryptMessage(String message, int shift) {
-        String encryptedMessage = "";
-        for (int i = 0; i < message.length(); i++) {
-            char c = message.charAt(i);
-            if (Character.isLetter(c)) {
-                char base = 'a'
-                if (Character.isLowerCase(c)) {
-                    base = 'a';
-                } else {
-                    base = 'A';
-                }
-                char encryptedChar = (char) ((c - base + shift) % 26 + base);
-                encryptedMessage += encryptedChar;
-            } else {
-                encryptedMessage += c;
-            }
+    public static boolean continuationDeterminer(Scanner input){
+        System.out.println("""
+                Do you want to continue?
+                Enter Yes or NO!    
+                """);
+        boolean valid = false;
+        String response = validateStringInput(input);
+
+        switch (response){
+            case "yes":
+                valid = false;
+                break;
+            case "no":
+                valid = true;
+                System.out.println("Goodbye>>");
+                break;
+            default:
+                System.out.println("Enter Yes or NO!");
         }
-        return encryptedMessage;
+        return valid;
     }
 
-    public static String decryptMessage(String message, int shift) {
-        String decryptedMessage = "";
+    public static void userChoice(int choice, Scanner input){
+        switch(choice){
+            case 1:
+                String encryptedMessage = encryptMessage(input);
+                System.out.println("Encrypted Message: " + encryptedMessage);
+                break;
+            case 2:
+                String decryptedMessage = decryptMessage(input);
+                System.out.println("Decrypted Message: " + decryptedMessage);
+                break;
+            default:
+                System.out.println("InvalidInput!!");
+                mainMenu();
+        }
+    }
+
+    public static String encryptMessage(Scanner input) {
+        System.out.println("""
+                What message do you want to encrypt?
+                """);
+        String message = validateStringInput(input);
+
+        System.out.print("Enter key to shift message with(0-25): ");
+        int shift = validateIntInput(input);
+        while(shift > 25 || shift < 0){
+            System.out.print("Enter key to shift message with(0-25): ");
+            shift = validateIntInput(input);
+        }
+        return shiftMessage(message, shift);
+    }
+
+    public static String decryptMessage(Scanner input) {
+        System.out.println("""
+                What message do you want to decrypt?
+                """);
+        String message = validateStringInput(input);
+
+        System.out.print("Enter key to shift message with(0-25): ");
+        int shift = validateIntInput(input);
+        while(shift > 25 || shift < 0){
+            System.out.print("Enter key to shift message with(0-25): ");
+            shift = validateIntInput(input);
+        }
+        return shiftMessage(message, -shift);
+    }
+
+    public static String shiftMessage(String message, int shift) {
+        StringBuilder shiftedMessage = new StringBuilder();
+
         for (int i = 0; i < message.length(); i++) {
             char c = message.charAt(i);
             if (Character.isLetter(c)) {
-                char base = 'a'
-                if (Character.isLowerCase(c)) {
-                    base = 'a';
-                } else {
-                    base = 'A';
-                }
-                char decryptedChar = (char) ((c - base - shift + 26) % 26 + base);
-                decryptedMessage += decryptedChar;
+                char base = (Character.isLowerCase(c)) ? 'a' : 'A';
+                char shiftedChar = (char) ((c - base + shift + 26) % 26 + base);
+                shiftedMessage.append(shiftedChar);
             } else {
-                decryptedMessage += c;
+                shiftedMessage.append(c);
             }
         }
-        return decryptedMessage;
+        return shiftedMessage.toString();
+    }
+
+
+    public static int validateIntInput (Scanner input){
+        boolean validInput = false;
+        int response = 0;
+
+        while (!validInput) {
+            try {
+                String userInput = input.nextLine().trim();
+                if (userInput.isEmpty()) {
+                    System.out.println("Input cannot be empty. Please enter a valid integer.");
+                    continue;
+                }
+                response = Integer.parseInt(userInput);
+                validInput = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter an integer.");
+                input.nextLine();
+            }
+        }
+        return response;
+    }
+
+    public static String validateStringInput (Scanner input){
+        String response = "";
+        boolean validInput = false;
+
+        while (!validInput) {
+            try {
+                response = input.nextLine().trim();
+                if (response.isEmpty()) throw new IllegalArgumentException("Input cannot be empty.");
+                validInput = true;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        return response;
     }
 }

@@ -22,7 +22,7 @@ public class SetMethodTest {
     public void testThat_setAddXYToSet() {
         set.add("firstExample");
         set.add("secondExample");
-        assertEquals(2,set.size());
+        assertEquals(2, set.size());
     }
 
     @Test
@@ -30,7 +30,7 @@ public class SetMethodTest {
         assertTrue(set.isEmpty());
         set.add("firstExample");
         set.add("secondExample");
-        assertEquals(2,set.size());
+        assertEquals(2, set.size());
         assertFalse(set.isEmpty());
     }
 
@@ -50,7 +50,7 @@ public class SetMethodTest {
         set.add("thirdExample");
         set.add("fourthExample");
         assertThrows(InputMismatchException.class, () -> set.add("firstExample"));
-        assertEquals(4,set.size());
+        assertEquals(4, set.size());
     }
 
     @Test
@@ -64,7 +64,7 @@ public class SetMethodTest {
         set.add("secondExample");
         set.add("thirdExample");
         set.remove("secondExample");
-        assertEquals(2,set.size());
+        assertEquals(2, set.size());
     }
 
     @Test
@@ -87,7 +87,7 @@ public class SetMethodTest {
         set.add("thirdExample");
         set.clear();
         assertTrue(set.isEmpty());
-        assertEquals(0,set.size());
+        assertEquals(0, set.size());
     }
 
     @Test

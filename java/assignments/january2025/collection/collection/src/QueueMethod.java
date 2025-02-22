@@ -29,7 +29,7 @@ public class QueueMethod <E>{
             return true;
         }
         else if(array.isFull()) throw new IllegalStateException("Queue is full");
-        if(firstElement == null) throw new NullPointerException("firstElement is null");
+        if(firstElement == null) throw new NullPointerException("Element is null");
         if(!firstElement.equals(getClass())) throw new ClassCastException();
         throw new IllegalArgumentException("Not allowed to add element");
     }
@@ -43,20 +43,18 @@ public class QueueMethod <E>{
     }
 
     public Object poll() {
-        if (array.size() == 0) return null;
+        if (array.isEmpty()) return null;
         Object frontElement = array.get(head);
         array.remove(head);
         return frontElement;
     }
 
     public Object remove() {
-        Object frontElement = poll();
-        return frontElement;
+        return poll();
     }
 
     public Object element() {
-        if (array.size() == 0) return null;
-        Object frontElement = peek();
-        return frontElement;
+        if (array.isEmpty()) return null;
+        return peek();
     }
 }

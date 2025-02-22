@@ -8,10 +8,18 @@ public class Main{
 
     public static void mainMenu(){
         Scanner input = new Scanner(System.in);
-        System.out.println("Which state are you from in Nigeria? ");
-        String userInput = validateStringInput(input);
-        GeoPoliticalZones foundZone = findStateZone(userInput);
-        displayResult(foundZone, userInput);
+        boolean validated = false;
+
+        while(!validated) {
+            System.out.println("Which state are you from in Nigeria? ");
+            String userInput = validateStringInput(input);
+            GeoPoliticalZones foundZone = findStateZone(userInput);
+            if(foundZone != null){
+                displayResult(foundZone, userInput);
+                validated = true;
+            }
+            else displayResult(foundZone, userInput);
+        }
     }
 
     private static void displayResult(GeoPoliticalZones foundZone,String userInput) {
