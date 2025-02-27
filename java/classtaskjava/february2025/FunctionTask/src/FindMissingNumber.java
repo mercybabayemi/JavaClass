@@ -9,18 +9,20 @@ public class FindMissingNumber {
     }
 
     public static ArrayList<Integer> insertMissingNumber(ArrayList<Integer> arr, int noOfMissingNumber, int step) {
-        int gottenSum = missingNumberSum(arr, noOfMissingNumber);
-        sort(arr);
+        Collections.sort(arr);
+        int lengthModified = arr.size() + noOfMissingNumber;
         int previousNo = arr.get(0);
         for (int i = 1; i < arr.size(); i++) {
             while (arr.get(i) - previousNo > step) {
                 int calculatedNo = previousNo + step;
-                arr.add(calculatedNo);
+                if (!arr.contains(calculatedNo)) {
+                    arr.add(calculatedNo);
+                }
                 previousNo = calculatedNo;
             }
             previousNo = arr.get(i);
         }
-        while (arr.size() < arr.size() + noOfMissingNumber) {
+        while (arr.size() < lengthModified) {
             int calculatedNo = arr.get(arr.size() - 1) + step;
             arr.add(calculatedNo);
         }

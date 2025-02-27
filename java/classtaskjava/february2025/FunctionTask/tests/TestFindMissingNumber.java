@@ -31,5 +31,8 @@ public class TestFindMissingNumber {
     public void testThat_insertMissingNumberReturnsCorrectValue(){
         ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(1,2,4));
         assertIterableEquals(FindMissingNumber.insertMissingNumber(arr,1,1), Arrays.asList(1,2,3,4));
+
+        ArrayList<Integer> arr1 = new ArrayList<>(Arrays.asList(1,2,4,5,7));
+        assertIterableEquals(FindMissingNumber.insertMissingNumber(arr1,1,1), Arrays.asList(1,2,3,4,5,6,7));
     }
 }
